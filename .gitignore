@@ -1,0 +1,7 @@
+history
+*.aux
+*.fdb_latexmk
+*.flx 
+*.log
+*.synctex.gz
+*.toc

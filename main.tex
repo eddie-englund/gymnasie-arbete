@@ -1,9 +1,14 @@
-\documentclass[a4paper, 12pt]{article}
+\documentclass[a4paper, 12pt]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[swedish]{babel}
 \usepackage{relsize}
 \usepackage[backend=biber, style=alphabetic, sorting=ynt]{biblatex}
 \usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{titling}
+
+\setcounter{secnumdepth}{0}
 
 \bibliography{bibliography.bib}
 \addbibresource{biliography.bib}
@@ -11,15 +16,35 @@
 \author{Eddie Englund}
 \title{Linux vs Windows\\[0.2em]\smaller{}En djupgående analys på prestanda skillnader mellan Microsoft Windows och Gnu/Linux}
 
+\renewcommand{\abstractname}{Abstract}
+\renewcommand{\abstract}{Abstract}
 
 \begin{document}
 
-\maketitle
+\begin{titlepage}
 
+    \maketitle
 
-\tableofcontents
+    \begin{center}
 
-\section{Försättsblad}\label{flyleaf}
+    
+        \includegraphics[width=0.15\textwidth]{nti}\par\vspace{1cm}
+
+    {\scshape\LARGE NTI Gymnasiet Gärdet \par}
+    \vspace{1cm}
+    {\scshape\Large Examensarbete/Master Thesis, April 2020\par}
+	\vspace{1.5cm}
+    \textbf{
+    Student: Eddie Englund, eddie.englund@elev.ga.ntig.se även eddie.englund@protonmail.com}
+    \vspace{0.2cm}
+
+    Handledare NTIG: Haris Kasumović, Haris.Kasumovic@ntig.se
+    \vspace{0.1cm}
+
+    Examinator NTIG: Haris Kasumović, Haris.Kasumovic@ntig.se
+    
+    \end{center}
+\end{titlepage}
 
 
 \section{Sammanfattning}\label{sum}
@@ -27,6 +52,10 @@
     \begin{abstract}
 
     \end{abstract}
+
+\tableofcontents
+
+
 
 \section{Inledning}
 
@@ -39,8 +68,11 @@
 
     Men den största skillnaden mellan Gnu/Linux och Windows är att det inte är proprietär och har öppen källkod vilket betyder att vem som helst kan bidra med kod för att antigen göra kerneln eller distrobutionen bättre eller att fixa buggar. Öppen källkod har även en annan fördel och det är att koden offtast inte är så kallad \textit{``bloated''}, alltså att det finns kod eller funktioner som inte behövs eller bara är dåliga. Detta leder till att prestandan på Linux är mycket hög. 
     
+    Därför så vill jag ta reda på om prestandan mellan Linux (manjaro) och Microsoft Windows 10 har en uppenbar skillnad och om den har det, varför?
 
 \section{Metod}
+
+
 
 \section{Resultat}
 

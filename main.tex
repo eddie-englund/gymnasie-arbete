@@ -1,7 +1,12 @@
-\documentclass[a4paper, 12pt, twoside]{article}
+\documentclass[a4paper, 12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[swedish]{babel}
 \usepackage{relsize}
+\usepackage[backend=biber, style=alphabetic, sorting=ynt]{biblatex}
+\usepackage{csquotes}
+
+\bibliography{bibliography.bib}
+\addbibresource{biliography.bib}
 
 \author{Eddie Englund}
 \title{Linux vs Windows\\[0.2em]\smaller{}En djupgående analys på prestanda skillnader mellan Microsoft Windows och Gnu/Linux}
@@ -26,13 +31,13 @@
 \section{Inledning}
 
 
-    I dagens samhälle så präglas operativstystems världen utav två stora jättar. Apple och Microsoft eller mer exakt deras operativstystem; macOS och Microsoft Windows. Men det finns ett tredje operativsystem som faktisk är grunden på bl.a Android och Apples macOS men också Apples operativsystem IOS.
+    I dagens samhälle så präglas operativ-systemens värld av två stora jättar. Apple och Microsoft eller mer exakt deras operativstystem; macOS och Microsoft Windows. Men det finns ett tredje operativsystem som faktisk är grunden på bl.a Android och Apples macOS men också deras andra operativsystem IOS.
 
-    Linux i sig själft är inte ett operativstystem men, det är det som kallas för en ``kernel''. Det är det som är hjärtat eller kanshe lite bättre jämfört med hjärnan av operativsystemet. Det är den biten som hanterar all saker och ting som vanliga program inte har tillgång till.
+    Linux i sig självt är inte ett operativsystem. Däremot, så är Linux det som kallas för en ``kernel''\cite{redhat}. Det är det som är hjärtat eller kanshe lite bättre jämfört med hjärnan av operativsystemet. Kerneln är en typ av mellanhand, mellan mjukvaran och hårdvaran. Den hanterar minnen och processer men även också en del andra saker.
 
-    Men eftersom att Linux är en kernel så finns det många så kallade distributioner utav det och dom är mer eller mindre operativsystem men med Linux som kärna. Den distributionen som jag har valt att använda är Manjaro. Manjaro är en så kallad \textit{Arch based distro}. Den är baserad på en annan distro som heter Arch Linux som offta blir kallat för den bästa distron. Men, Manjaro gör det lättare att komma igång med och har dem flästa fördelarna med Arch.
+    Men eftersom att Linux är en kernel så finns det många så kallade distributioner utav det och dom är mer eller mindre operativsystem men med Linux som kärna. Den distributionen som jag har valt att använda är Manjaro\cite{manjaro}. Manjaro är en så kallad \textit{Arch based distro}. Den är baserad på en annan distro som heter Arch Linux som offta blir kallat för den bästa distron. Men, Manjaro gör det lättare att komma igång med och har dem flästa fördelarna med Arch.
 
-    Men den största skillnaden mellan Gnu/Linux och Windows är att det inte är proprietär
+    Men den största skillnaden mellan Gnu/Linux och Windows är att det inte är proprietär och har öppen källkod vilket betyder att vem som helst kan bidra med kod för att antigen göra kerneln eller distrobutionen bättre eller att fixa buggar. Öppen källkod har även en annan fördel och det är att koden offtast inte är så kallad \textit{``bloated''}, alltså att det finns kod eller funktioner som inte behövs eller bara är dåliga. Detta leder till att prestandan på Linux är mycket hög. 
     
 
 \section{Metod}
@@ -41,6 +46,12 @@
 
 \section{Analys/diskussion}
 
+
+
 \section{Slutsats}
+
+
+\printbibliography
+
 
 \end{document}

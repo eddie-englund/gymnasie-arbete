@@ -5,3 +5,8 @@ history
 *.log
 *.synctex.gz
 *.toc
+*
+
+!main.pdf
+!main.tex
+!program

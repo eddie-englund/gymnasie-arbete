@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[swedish]{babel}
 \usepackage{relsize}
-\usepackage[backend=biber, style=alphabetic, sorting=ynt]{biblatex}
+\usepackage[backend=biber, style=numeric-comp, sorting=ynt]{biblatex}
 \usepackage{csquotes}
 \usepackage{graphicx}
 \usepackage{titlesec}
@@ -18,7 +18,7 @@
 \addbibresource{biliography.bib}
 
 \author{Eddie Englund}
-\title{Linux vs Windows\\[0.2em]\smaller{}En djupgående analys av prestanda skillnader mellan Microsoft Windows och Gnu/Linux}
+\title{Linux vs Windows\\[0.2em]\smaller{}En djupgående analys av prestanda skillnader mellan Microsoft Windows och Manjaro Linux}
 \date{VT 2020}
 
 \renewcommand{\abstractname}{Abstract}
@@ -62,24 +62,30 @@
 
 \tableofcontents
 
+\vspace{3cm}
 
-
+    
 \section{Inledning}
 
 
-    I dagens samhälle så präglas operativsystemens värld av två stora jättar. Apple och Microsoft eller mer exakt deras operativsystem; macOS och Microsoft Windows. Men det finns ett tredje operativsystem som faktisk är grunden på bl.a Android och Apples macOS men också deras andra operativsystem IOS och det system kallas för Linux.
+    I och med att världen blir mer och mer digitaliserad varje dag så är det inte konstigt att det finns en massiv marknad med olika alternativ för näst intill allting när det kommer till den digitaliserade värdlen. Allt från telefoner till hem datorer eller kanske till och med smart damsugare eller också en smart gräsklippare. Alla dessa digitaliserade mirakel har en sak gemensamt. Dem alla har ett operativ system.
+
+    Världens mest kända operativsystem (inom allmenheten) är Microsoft Windows. Microsoft har en lång rad med olika verisioner av sitt operativ system\cite{windows}: Windows XP, Windows Vista, Windows 7(\dots) och deras senaste (och förmodligen sista) operativ system Windows 10.
+     I alla Apple datorer så har man macOS, i deras telefoner har dom IOS och i deras nya Ipads så har dom iPadOS.
+     Det finns faktisk ett tredje ``operativsystem''; Linux är en så kallad Kernel \cite{redhat} som är det man kan bygga ett operativsystem på. Linux har många olika operativsystem som är kallade för distributioner eller förkortat \textit{``distros''}. Linux är välkänt inom utväcklar värdlen eftersom att det är mycket vänligt för utvecklingsmiljöer men också eftersom att Linux har (offtast) en mycket god prestanda på gamla/sämmre maskiner. På grund av detta så är bl.a: iPadOS, IOS, macOS, Android och näst intill allting annat som inte har så mycket processor kraft som t.ex en hiss. Men reflekterars Linux kraftiga prestanda på mindre starka maskiner med lite CPU kraft likadant på dom starka maskinerna? Är prestandan bättre på ``starka'' maskiner som kör Linux som sin kernel?
 
 
 \section{Bakrund}
 
-    Linux i sig självt är inte ett operativsystem. Däremot, så är Linux det som kallas för en ``kernel''\cite{redhat}. Det är det som är hjärtat eller kanske lite bättre jämfört med hjärnan av operativsystemet. Kerneln är en typ av mellanhand, mellan mjukvaran och hårdvaran. Den hanterar minnen och processer men även också en del andra saker.
+    Linux är inte operativsystem. Däremot, så är Linux det som kallas för en ``kernel''\cite{redhat}. Det är hjärtat av operativsystemet eller kanske lite bättre jämfört med hjärnan av operativsystemet. Kerneln är en typ av mellanhand, mellan mjukvaran och hårdvaran. Den hanterar minnet och processer men även också en del andra saker.
 
-    Men eftersom att Linux är en kernel så finns det många så kallade distributioner utav det och dom är mer eller mindre operativsystem men med Linux som kärna. Den distributionen som jag har valt att använda är Manjaro\cite{manjaro}. Manjaro är en så kallad \textit{Arch based distro}. Den är baserad på en annan distro som heter Arch Linux som ofta blir kallat för den bästa distron. Men, Manjaro gör det lättare att komma igång med och har dom flesta fördelarna med Arch.
+    Men eftersom att Linux är en kernel så finns det många så kallade distributioner/verisioner (operativsystem). Skillanderna på distroen kan variera högt, men offtast handlar dom största skillnaderna om vilka så kalladed ``repositories'' man använder för att distrubera mjukvara. Dessutom så kan det handla om villka filsystem man använder men också hur mycket eller hur lite förinstallerade program som finns när man installerar distrobutionen.
+    
+    Den distributionen som jag har valt att använda är Manjaro\cite{manjaro}. Manjaro är en så kallad \textit{Arch based distro}. Den är baserad på en annan distro som heter Arch Linux som ofta blir kallat för den bästa distron. Men, Manjaro gör det lättare att komma igång med och har dom flesta fördelarna med Arch.
 
     Men den största skillnaden mellan Gnu/Linux och Windows är att det inte är proprietär och har öppen källkod vilket betyder att vem som helst kan bidra med kod för att; göra kerneln eller distributionen bättre och lägga till fler användbara funktioner, men också att fixa buggar. Öppen källkod har även en annan fördel och det är att koden oftast inte är så kallad \textit{``bloated''}, alltså att det finns kod eller funktioner som inte behövs eller att kod kvaliteten inte är bra. Detta leder till att prestandan på Linux är mycket hög. 
     
     Därför så vill jag ta reda på om prestandan mellan Linux (manjaro) och Microsoft Windows 10 har en uppenbar skillnad och om dom har det, varför? Jag vill dessutom veta vad konsensusen är inom utvecklar miljöer.
-
 \subsection{Vad tror utvecklare?}
 
     För att ta reda på vad andra utvecklare har för hypotes/teori om prestandan mellan Linux i allmänhet och Windows 10, varför prestandan skulle vara annorlunda, vilket operativsystem dom föredrar och varför.  Så delades det runt ett formulär runt om kring olika programmerings/utvecklingsforum men även genom kontakter lyckats skicka vidare formuläret i proffesionella utvecklingsmiljöer.

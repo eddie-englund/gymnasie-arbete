@@ -12,7 +12,7 @@ history
 !program/*
 !program/benches/*
 !program/src/**/*
-!program/target/**/*
+!program/target/criterion/*
 !program
 !*.bib
 !*.png

@@ -10,9 +10,7 @@ history
 !main.pdf
 !main.tex
 !program/*
-!program/benches/*
-!program/src/**/*
-!program/target/criterion/*
+!program/src/*
 !program
 !*.bib
 !*.png

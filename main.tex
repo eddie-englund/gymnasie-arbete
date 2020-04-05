@@ -2,13 +2,21 @@
 \usepackage[utf8]{inputenc}
 \usepackage[swedish]{babel}
 \usepackage{relsize}
-\usepackage[backend=biber, style=numeric-comp, sorting=ynt]{biblatex}
+\usepackage[backend=biber, style=numeric-comp, sorting=none]{biblatex}
 \usepackage{csquotes}
 \usepackage{graphicx}
 \usepackage{titlesec}
 \usepackage{titling}
 \usepackage{pgf-pie}
 \usepackage{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Eddie Englund Gymansiearbete TEINF17A VT 2020}
+\rhead{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headheight}{14.999pt}
+
+
 
 \emergencystretch=1em
 
@@ -29,11 +37,10 @@
 \begin{document}
 
 \begin{titlepage}
-
     \maketitle
 
     \begin{center}
-
+        \thispagestyle{empty}
     
         \includegraphics[width=0.15\textwidth]{nti}\par\vspace{1cm}
 
@@ -68,39 +75,58 @@
 \section{Inledning}
  
  
-   I och med att världen blir mer och mer digitaliserad varje dag så är det inte konstigt att det finns en massiv marknad med olika alternativ för nästintill allting när det kommer till den digitaliserade världen. Allt från telefoner till hemdatorer eller kanske till och med smart dammsugare eller också en smart gräsklippare. Alla dessa digitaliserade mirakel har en sak gemensamt. Dem alla har ett operativsystem.
+   I och med att världen blir mer och mer digitaliserad för varje dag som går, så är det inte konstigt att det finns en massiv marknad med olika alternativ för nästintill allting i den digitaliserade världen. Allt från telefoner till hemdatorer eller kanske till och med robotdammsugare eller också en robotgräsklippare. Alla dessa digitaliserade mirakel har en sak gemensamt. Dem alla har ett operativsystem.
  
-   Världens mest kända operativsystem (inom allmänheten) är Microsoft Windows. Microsoft har en lång rad med olika versioner av sitt operativsystem\cite{windows}: Windows XP, Windows Vista, Windows 7[\dots] och deras senaste (och förmodligen sista) operativsystem Windows 10.
-    I alla Apple datorer så har man macOS, i deras telefoner har dom IOS och i deras nya Ipads så har dom iPadOS.
-    Det finns faktisk ett tredje ``operativsystem''; Linux är en så kallad Kernel \cite{redhat} som är det man kan bygga ett operativsystem på. Linux har många olika operativsystem som är kallade för distributioner eller förkortat \textit{``distros''}. Linux är välkänt inom utvecklar världen eftersom att det är mycket vänligt för utvecklingsmiljöer men också eftersom att Linux har (oftast) en mycket god prestanda på maskiner med mindre processorkraft. På grund av detta så är bl.a: iPadOS, IOS, macOS, Android och nästintill allting annat som inte har så mycket processorkraft som t.ex en hiss.
+   Världens mest kända operativsystem\cite{winstat} är Microsoft Windows. Microsoft har en lång rad med olika versioner av sitt operativsystem\cite{windows}: Windows XP, Windows Vista, Windows 7[\dots] och deras senaste (och förmodligen sista) operativsystem Windows 10.
     
-    \subsection{Frågeställning}
-    Men reflekteras Linux kraftiga prestanda på mindre starka maskiner med lite CPU kraft likadant på dom starka maskinerna? Är prestandan bättre på ``starka'' maskiner som kör Linux som sin kernel?
+   Apple har flera olika operativsystem\cite{appleOS} som dom använder sig utav på sina olika produkter. I deras datorer så har man macOS, i deras telefoner har dom IOS och i deras nya Ipads så har dom iPadOS.
+    Det finns faktisk ett tredje ``operativsystem''; Linux är en så kallad Kernel \cite{redhat} som är det man kan bygga ett operativsystem på. Linux har många olika operativsystem som är kallade för distributioner eller förkortat \textit{``distros''}. Linux är välkänt inom utvecklar världen eftersom att det är mycket vänligt för utvecklingsmiljöer men också eftersom att Linux har (oftast) en mycket god prestanda på maskiner med mindre processorkraft\cite{whatislinux}. På grund av detta så är bl.a: iPadOS, IOS, macOS, Android och nästintill allting annat som inte har så mycket processorkraft som t.ex en hiss någon form a Linux som operativsystem.
+    
+    \section{Bakgrund/Teori}
+
+
+    \subsection{Syfte/Frågeställning}
+    Udersökningens syfte är att ta reda på om Linux eller Windows har olika prestanda och varför. Är det så att dom har olika prestana i olika typer av applikationer eller är det konstant? Undersökningen kommer att använda en rad olika tester för att ta reda på om hypotesen är san.
  
+
+    \subsection{Hypotes}
+
+    Utifrån mina egen upplevelse så är Linux (när man väl har konfiguerarat det ordentligt) en mycket mer stabil och snabbare upplevelse en Microsoft Windows 10.
  
-\section{Bakgrund}
 
     \subsection{Linux}
  
-   Linux är inte operativsystem. Däremot, så är Linux det som kallas för en ``kernel''\cite{redhat}. Det är hjärtat av operativsystemet eller kanske lite bättre jämfört med hjärnan av operativsystemet. Kerneln är en typ av mellanhand, mellan mjukvaran och hårdvaran. Den hanterar minnet och processer men även också en del andra saker.
+   Linux är inte operativsystem. Däremot, så är Linux det som kallas för en ``kernel''\cite{redhat}. Det är hjärtat av operativsystemet eller kanske lite bättre jämfört med hjärnan av operativsystemet. Kerneln är en typ av mellanhand, mellan mjukvaran och hårdvaran. Den hanterar minnet och processer och även en del andra processer.
  
-   Men eftersom att Linux är en kernel så finns det många så kallade distributioner/versioner (operativsystem). Skillnaderna på dem olika distributionerna kan variera högt, men oftast handlar dom största skillnaderna om vilka så kallad ``repositories'' man använder för att distribuera mjukvara. Dessutom så kan det handla om vilka filsystem man använder men också hur mycket eller hur lite förinstallerade program som finns när man installerar distributionen.
-  
-   Den distributionen som jag har valt att använda är Manjaro\cite{manjaro}. Manjaro är en så kallad \textit{Arch based distro}. Den är baserad på en annan distro som heter Arch Linux som ofta blir kallat för den bästa distron. Men, Manjaro gör det lättare att komma igång och så har Manjaro dom flesta fördelarna som Arch.
+   På grund utav att Linux är en kernel så finns det många så kallade distributioner/versioner (operativsystem). Skillnaderna på dem olika distributionerna kan variera högt, oftast handlar dom största skillnaderna om vilka så kallad ``repositories'' man använder för att distribuera mjukvara. Dessutom så kan det handla om vilka filsystem man använder men också hur mycket eller hur lite förinstallerade program som finns när man installerar distributionen.
 
-   Men den största skillnaden mellan Linux och Windows är att det inte är proprietär och har öppen källkod vilket betyder att vem som helst kan bidra med kod för att; göra kerneln eller distributionen bättre och lägga till fler användbara funktioner, men även också att fixa buggar. Öppen källkod har även en annan fördel och det är att koden oftast inte är så kallad \textit{``bloated''}, alltså att det finns kod eller funktioner som inte behövs eller att kod kvaliteten inte är bra. Detta leder till att prestandan på Linux är mycket hög.
+
+   En annan fördel med Linux är att man har absolut kontroll. Man kan byta så kallade \textit{window managers} eller förkortat \textit{wm}\cite{wm}. Man kan även göra om Linux kerneln ifall man vill göra något specifik eller kanske inte behöver bitar av den för att optimasera sin maskin. Detta är mycket vanligt inom låg processor kraftiga maskiner som hissar eller smart klockor.
+
+   \vspace{1cm}
+
+
+   Den största skillnaden mellan Linux och Windows är att Linux inte är proprietär och har öppen källkod vilket betyder att vem som helst kan bidra med kod för att; göra kerneln eller distributionen bättre och lägga till fler användbara funktioner, men även också att fixa buggar. Öppen källkod har även en annan fördel och det är att koden oftast inte är så kallad \textit{``bloated''}, alltså att det finns kod eller funktioner som inte behövs eller att kod kvaliteten inte är bra. Detta leder till att prestandan på Linux är mycket hög.
+    \vspace{1cm}
+   Den distributionen som jag har valt att använda är Manjaro\cite{manjaro}. Manjaro är en så kallad \textit{Arch based distro}. Den är baserad på en annan distro som heter Arch Linux som ofta blir kallat för den bästa distron. Däremot så gör Manjaro det lättare att komma igång och så har Manjaro dem flesta fördelarna som Arch Linux har.
 
    \subsection{Windows}
     
-    Windows 10 är skrivet i programmeringspråket C\# som är skapat av Microsoft\cite{c}. Microsoft skapade C\# 20 år sedan (2000) när dom ville skriva delar av Windows XP i Java men det fick dem inte eftersom att Oracle sa nej. Så dom utväcklade vad Klaus och Angelika Langer sa i en blog post att ``Java and C\# are almost identical programming languages. Boring repetition that lacks innovation''\cite{cquote}
+    Windows 10 är skrivet i programmeringspråket C\# som är skapat av Microsoft\cite{c}. Microsoft skapade C\# 20 år sedan (2000) när dom ville skriva delar av Windows XP i Java men det fick dem inte eftersom att Oracle sa nej. Så dom utväcklade vad Klaus och Angelika Langer sa i en blog post att ``Java and C\# are almost identical programming languages. Boring repetition that lacks innovation''.\cite{cquote} Windows är också ett operativsystem som är skrivet helt ``in house'' (det är inte öppen källkod). 
+    
+    Eftersom att det inte är öppen källkod så vet vi inte riktigt va Windows faktiskt håller på med i bakgrunden. Det gör så att man inte kan ändra på saker lika mycket som man kan på Linux. Dessutom så gör det att Microsoft kan göra lite vad det vill eftersom att det inte måste informera sina användare om alla ändringar (om inte lagen kräver det). Dessutom så är Windows ganska restriktivt i och med att man inte har absolut kontroll över bl.a när man ska/vill uppdatera.
+ 
+   Däremot så finns det faktiskt en fördel med att inte ha öppen källkod. Microsoft kan skapa en virtuell monopoli över vissa marknader. T.ex så är Windows (inom pc världen) det bästa operativsystemet att spela på. Det här är eftersom att dom flesta spelen är skapade för att köra på Windows. Det är eftersom att DirectX\cite{directx} finns på Windows men också eftersom att det inte är öppen källkod så är det inte särskillt lätt att piratkopiera spelen och deras innehåll.
 
-  
-   Därför så vill jag ta reda på om prestandan mellan Linux (manjaro) och Microsoft Windows 10 har en uppenbar skillnad och om dom har det, varför? Jag vill dessutom veta vad konsensusen är kring Linux i utväcklar grupper/forum.
+
  
 \section{Metod}
  
-För att ta reda på om det finns prestandaskillnader mellan Windows och Linux (manjaro) så behövde jag ta reda på vilket programmeringsspråk som vore relevant för att mäta prestandan mellan Windows och Linux(Manjaro) och en del andra saker.
+
+\subsection{Språk och program}
  
+För att ta reda på om det finns prestandaskillnader mellan Windows och Linux (manjaro) så behövde jag ta reda på vilket programmeringsspråk som vore relevant för att mäta prestandan mellan Windows och Linux(Manjaro) och en del andra saker.
+
 \begin{enumerate}
    \item Vilket språk bör användas och varför?
    \item Vad bör man utföra för uppgift i programmet för att få maskinerna att arbeta?
@@ -108,27 +134,46 @@ För att ta reda på om det finns prestandaskillnader mellan Windows och Linux (
    \item Hur kan vi verifera våra mätningar?
 \end{enumerate}
  
-Den första frågan ledde till ett ganska djupt hål eftersom att det finns extremt många programmeringsspråk. Bara för att nämna ett par: Java, Javascript, Python, C, C++, C\#, Haskell, Ruby, Rust, mm. Okej, så vi har en hel del olika språk.
+Den första frågan ledde till ett ganska djupt hål eftersom att det finns extremt många programmeringsspråk. Bara för att nämna ett par: Java, Javascript, Python, C, C++, C\#, Ruby, Rust, mm. 
+
+
+För att kunna välja ett språk så vi kan börja med at utesluta dem långsamma språken. Då så utesluts: Ruby, Javascript och Python. Ruby, Javascript och Python är alla väldigt långsamma eftersom att (bl.a) så har dem inte multitrådars kapabilitet (programmen kan inte göra flera saker sammtidigt).
+
+ Python är väldigt långsamt eftersom att det var gjort för att vara lätt att skriva vilket skapar en hel del extra uppgifter som kompilator/runtimen måste utföra vilket gör den större. Detta gör att det tar längre tid att kompilera till maskinkod och därför tar det längre tid att utföra en uppgift. 
  
-Så vi kan börja med utesluta dem långsamma språken. Direkt då så utesluts: Ruby, Javascript och Python. Ruby, Javascript och Python är alla väldigt långsamma eftersom att bl.a så har dem inte multitrådars kapabilitet (programmer kan inte göra flera saker sammtidigt). Python är väldigt långsamt eftersom att det var gjort för att vara lätt att skriva vilket skapar en hel del extra uppgifter som runtimen måste utföra vilket gör den större vilket också gör att det tar längre tid att kompilera till maskinkod och därför utföra en uppgift. Vi vill heller inte ha språk som måste bli \textit{interpreted} i runtime. Då försvinner Java. Detta eftersom att Java har det som kallas för \textit{JVM} vilket är kort för ``Java Virtual Machine''. Detta var skapat för att ha ett kompabilitets lager så att man ska kunna köra Java program på alla datorer oavsett operativsystem. Därefter så vore det också bra om man kan köra/skriva språket på Linux utan att lägga till extra kompabilitets lager. Då försvinner C\# eftersom att för att köra det på Linux så behöver man det som kallas för ``.Net Core'' vilket fungerar som JVM och av samma anledning som Java så vill vi inte ha det. Nu har vi endast C, C++ och rust kvar och eftersom att jag har lite erfarenhet med rust och eftersom att Rust inte är lika svårt när det kommer till saker som minneshantering så slutade det med att jag valde Rust som språk.
+ Vi vill heller inte ha språk som måste bli \textit{interpreted} i runtime. Då försvinner Java. Detta eftersom att Java har det som kallas för \textit{JVM} vilket är kort för ``Java Virtual Machine''. Detta var skapat för att ha ett kompabilitets lager så att man ska kunna köra Java program på alla datorer oavsett operativsystem. 
+ 
+ Därefter så vore det också bra om man kan köra/skriva språket på Linux utan att lägga till extra kompabilitets lager som Javas JVM. Då försvinner C\# eftersom att för att köra det på Linux så behöver man det som kallas för \textit{``.Net Core''} vilket fungerar som JVM och av samma anledning så vill vi inte ha det. Nu har vi endast C, C++ och rust kvar och eftersom att jag har erfarenhet med Rust och eftersom att Rust inte är lika svårt med bl.a minneshantering så slutade det med att jag valde Rust som språk för att skriva mitt programm i.
  
  
-Så nu har vi ett språk som vi vet är snabbt, stabilt och kan köras på flera maskiner (efter kompilering till den plattformen). Vad bör programmet utför för uppgift? Ett problem som uppstod när jag först försökte fylla en vektor med 1 gigabyte utav integers och sedan loopade programmet för att ha det igång så att jag kan verifiera att den gör det den ska. Jag la snabbt märke till att programmet inte tog i närheten så mycket som jag hade sagt åt språket att göra. Så jag gjorde en del research och det visar sig att Rust till skillnad från C och C++ har lite så kallad ``garbage collection'' som är mycket smart. Om datan inte blir använd så är den datan inte registrerad utan data platsen i ram minnet är endast reserverat. Så jag fick backa tillbaka ett steg och tänka på vad jag kan göra istället.
+Så nu har vi ett språk som vi vet är snabbt, stabilt och kan köras på flera maskiner (efter kompilering till den plattformen). Vad bör programmet utföra för uppgift?
+
+Ett problem som uppstod när jag först försökte fylla en vektor med 1 gigabyte utav integers och sedan loopa programmet för att ha det igång så att jag kan verifiera att den gör det den ska, så la jag snabbt märke till att programmet inte tog i närheten så mycket som jag hade sagt åt språket att göra.
+
+Så jag gjorde en del research och det visar sig att Rust till skillnad från C och C++ har lite så kallad ``garbage collection'' som är mycket smart. Om datan inte blir använd så är den datan inte registrerad utan data platsen i ram minnet är endast reserverat. Så jag fick ta ett steg tillbaka och tänka på vad jag kan göra istället.
  
-Jag kom senare på en ide om att använda mig av ett bibliotek som heter ``criterion'' som är användbart för att göra så kallade ``benchmarks'' alltså att mäta prestandan. Sedan så gjorde jag ett kort program som kör fibonacci sekvensen och kalkylerar den vilket är en tung process som börjar trycka på gränserna av 64bit. Sedan så kör jag prestanda testet 20 gånger och sedan tar jag genomsnittet av värdena för att se till att testerna är precisa och exakta.
+Jag kom senare på en ide om att använda mig av ett bibliotek som heter ``criterion'' som är användbart för att göra så kallade ``benchmarks'', alltså att mäta prestandan. Med det biblioteket så skrev jag ett kort program som kör fibonacci sekvensen och kalkylerar den. Det är en mycket tung process som börjar trycka på gränserna av 64bit. Efter det så kör jag prestanda testet 20 gånger och tar jag genomsnittet av alla test värden för att se till att testerna är precisa och exakta.
  
  
 \subsection{Vad tror utvecklare?}
  
-   För att ta reda på vad andra utvecklare har för hypotes/teori om prestandan mellan Linux i allmänhet och Windows 10, varför prestandan skulle vara annorlunda, vilket operativsystem dom föredrar och varför.  Så delades det runt ett formulär runt om kring olika programmerings/utvecklingsforum men även genom kontakter lyckats skicka vidare formuläret i professionella utvecklingsmiljöer.
+   För att ta reda på vad andra utvecklare har för hypotes/teori om prestandan mellan Linux och Windows 10, varför prestandan skulle vara annorlunda, vilket operativsystem dom föredrar och varför. Så delades det runt ett formulär runt om kring olika programmerings/utvecklingsforum men även genom kontakter lyckats skicka vidare formuläret i professionella utvecklingsmiljöer.
  
    Notera att formuläret var skrivet på Engelska för att kunna nå ut till så många utvecklare så möjligt.
+    
+   \vspace{1cm}
  
  
-   \vspace{2.7cm}
+   \small{OBS! Det fanns några frågor som var alternativa, till exempel: att motivera sina svar.
+  
+   Vill ni läsa dessa motiveringar så finns dom här:} \smaller{\url{https://tinyurl.com/rccw2af}}
  
- 
-   \large {Which operating system would have superior performance in tasks like, compiling code, executing code or even intensive workloads like working in a program  like blender or unity?}
+
+\section{Resultat}
+
+\subsection{Formulär}
+
+\large {Which operating system would have superior performance in tasks like, compiling code, executing code or even intensive workloads like working in a program  like blender or unity?}
  
    \vspace{.5cm}
  
@@ -139,8 +184,8 @@ Jag kom senare på en ide om att använda mig av ett bibliotek som heter ``crite
  
    \begin{tikzpicture}
        \pie [rotate = 180, color = {blue!60, orange!90}, radius = 2, text = legend]
-   {40/Windows,
-    60/Linux}
+   {39.1/Windows,
+    60.9/Linux}
  
    \end{tikzpicture}
  
@@ -165,14 +210,6 @@ Jag kom senare på en ide om att använda mig av ett bibliotek som heter ``crite
    \cite{form}
  
    \vspace{1cm}
- 
- 
-   \small{OBS! Det fanns några frågor som var alternativa, till exempel: att motivera sina svar.
-  
-   Vill ni läsa dessa motiveringar så finns dom här:} \smaller{\url{https://tinyurl.com/rccw2af}}
- 
-
-\section{Resultat}
 
 \section{Analys/diskussion}
 
@@ -185,3 +222,8 @@ Jag kom senare på en ide om att använda mig av ett bibliotek som heter ``crite
 
 
 \end{document}
+
+
+%% Note to self:
+
+%% Write about how Linux stays ahead in security and performance by switching to newer versions of File systems and other systems/software.

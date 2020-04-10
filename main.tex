@@ -16,7 +16,7 @@
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\headheight}{14.999pt}
 
-
+\setcounter{tocdepth}{3}
 
 \emergencystretch=1em
 
@@ -79,8 +79,8 @@
  
    Världens mest kända operativsystem\cite{winstat} är Microsoft Windows. Microsoft har en lång rad med olika versioner av sitt operativsystem\cite{windows}: Windows XP, Windows Vista, Windows 7[\dots] och deras senaste (och förmodligen sista) operativsystem Windows 10.
     
-   Apple har flera olika operativsystem\cite{appleOS} som dom använder sig utav på sina olika produkter. I deras datorer så har man macOS, i deras telefoner har dom IOS och i deras nya Ipads så har dom iPadOS.
-    Det finns faktisk ett tredje ``operativsystem''; Linux är en så kallad Kernel \cite{redhat} som är det man kan bygga ett operativsystem på. Linux har många olika operativsystem som är kallade för distributioner eller förkortat \textit{``distros''}. Linux är välkänt inom utvecklar världen eftersom att det är mycket vänligt för utvecklingsmiljöer men också eftersom att Linux har (oftast) en mycket god prestanda på maskiner med mindre processorkraft\cite{whatislinux}. På grund av detta så är bl.a: iPadOS, IOS, macOS, Android och nästintill allting annat som inte har så mycket processorkraft som t.ex en hiss någon form a Linux som operativsystem.
+   Apple har flera olika operativsystem\cite{appleOS} I deras olika produkter. I deras datorer så har man macOS, i deras telefoner har dom IOS och i deras nya Ipads så har dom iPadOS.
+    Det finns faktisk ett tredje ``operativsystem''; Linux är en så kallad Kernel \cite{redhat} som är det man kan bygga ett operativsystem på. Linux har många olika operativsystem som är kallade för distributioner eller förkortat \textit{``distros''}. Linux är välkänt. Speciellt inom utvecklarvärlden eftersom att det är mycket vänligt för utvecklingsmiljöer, dessutom så har Linux (oftast) en mycket god prestanda på maskiner med mindre processorkraft\cite{whatislinux}. På grund av detta så är bl.a: iPadOS, IOS, macOS, Android och nästintill allting annat som inte har så mycket processorkraft som t.ex en hiss någon form a Linux som operativsystem.
     
     \section{Bakgrund/Teori}
 
@@ -91,19 +91,39 @@
 
     \subsection{Hypotes}
 
-    Utifrån mina egen upplevelse så är Linux (när man väl har konfiguerarat det ordentligt) en mycket mer stabil och snabbare upplevelse en Microsoft Windows 10.
+    Utifrån mina egen upplevelse så är Linux (när man väl har konfiguerarat det ordentligt) en mycket mer stabil och snabbare upplevelse en Windows 10.
  
 
     \subsection{Linux}
  
-   Linux är inte operativsystem. Däremot, så är Linux det som kallas för en ``kernel''\cite{redhat}. Det är hjärtat av operativsystemet eller kanske lite bättre jämfört med hjärnan av operativsystemet. Kerneln är en typ av mellanhand, mellan mjukvaran och hårdvaran. Den hanterar minnet och processer och även en del andra processer.
+   Linux är inte operativsystem. Däremot, så är Linux det som kallas för en ``kernel''\cite{redhat}. Det är hjärtat av operativsystemet eller kanske lite bättre jämfört med hjärnan av operativsystemet. Kerneln är en typ av mellanhand, mellan mjukvaran och hårdvaran. Den hanterar minnet, olika typer av processer, drivrutiner, systemanrop och säkerhet.
  
-   På grund utav att Linux är en kernel så finns det många så kallade distributioner/versioner (operativsystem). Skillnaderna på dem olika distributionerna kan variera högt, oftast handlar dom största skillnaderna om vilka så kallad ``repositories'' man använder för att distribuera mjukvara. Dessutom så kan det handla om vilka filsystem man använder men också hur mycket eller hur lite förinstallerade program som finns när man installerar distributionen.
 
+    \subsubsection{Distributioner}
+
+   Eftersom att Linux är en kernel så finns det många så kallade distributioner/versioner (operativsystem). Skillnaderna på dem olika distributionerna kan variera högt, oftast handlar dem största skillnaderna om vilka så kallad ``repositories'' (arkiv med mjukvara) man använder för att distribuera mjukvara. Dessutom så kan det handla om vilka filsystem man använder men också hur mycket eller hur lite förinstallerade program som finns när man installerar distributionen.
+
+   \subsubsection{Repositories}
+
+    En högt definerande egenskap hos Linux är användandet av ``repositories''. Repositories är arkiv eller data banked med mjukvara. Man använder sig utav dessa för att lättare och säkert installera program.
+
+    Normalt sätt när man ska installera ett program på Windows eller Mac så öppnar man en webbläsare och söker på mjukvaran man vill ha, går till sidan, laddar ner en program installatör för det programmet man vill ha, sedan kör man den. Efter det kan man ta bort installören, om man kommer ihåg det.
+    
+    Men inte på Linux. På Linux så använder man offtast sig av en terminal och ett kommando (detta varierar på distron).
+    På Manjaro som är Arch baserad så använder man sig utav pacman\cite{pacman}. Pacman är en ``package manager''\cite{pkgmanager}. Den hanterer paket (mjukvara) som man vill ta bort, installera eller kanske uppdatera.
+
+    För att installera ett programm på Manjaro så skulle man skriva: sudo pacman -S programnamn. 
+
+    \small{notera att det går att installera programm på andra sätt}
+
+
+    \subsubsection{Absolut kontroll}
 
    En annan fördel med Linux är att man har absolut kontroll. Man kan byta så kallade \textit{window managers} eller förkortat \textit{wm}\cite{wm}. Man kan även göra om Linux kerneln ifall man vill göra något specifik eller kanske inte behöver bitar av den för att optimasera sin maskin. Detta är mycket vanligt inom låg processor kraftiga maskiner som hissar eller smart klockor.
 
-   \vspace{1cm}
+   Allt detta är tack vare att Linux har en öppen källkod och tillåter använda att göra vad dom vill med det. Detta skulle alldrig vara möjligt på Windows eller Mac (om man inte crackar/gör illegala saker) eftersom att deras licenser säger att man inte får och dessutom så får man inte distribuera sina ändringar ifall man har gjort dem.
+
+   \subsubsection{Öppen källkod}
 
 
    Den största skillnaden mellan Linux och Windows är att Linux inte är proprietär och har öppen källkod vilket betyder att vem som helst kan bidra med kod för att; göra kerneln eller distributionen bättre och lägga till fler användbara funktioner, men även också att fixa buggar. Öppen källkod har även en annan fördel och det är att koden oftast inte är så kallad \textit{``bloated''}, alltså att det finns kod eller funktioner som inte behövs eller att kod kvaliteten inte är bra. Detta leder till att prestandan på Linux är mycket hög.
@@ -111,12 +131,19 @@
    Den distributionen som jag har valt att använda är Manjaro\cite{manjaro}. Manjaro är en så kallad \textit{Arch based distro}. Den är baserad på en annan distro som heter Arch Linux som ofta blir kallat för den bästa distron. Däremot så gör Manjaro det lättare att komma igång och så har Manjaro dem flesta fördelarna som Arch Linux har.
 
    \subsection{Windows}
+
+
+    \subsubsection{Skrivet I flera språk}
     
-    Windows 10 är skrivet i programmeringspråket C\# som är skapat av Microsoft\cite{c}. Microsoft skapade C\# 20 år sedan (2000) när dom ville skriva delar av Windows XP i Java men det fick dem inte eftersom att Oracle sa nej. Så dom utväcklade vad Klaus och Angelika Langer sa i en blog post att ``Java and C\# are almost identical programming languages. Boring repetition that lacks innovation''.\cite{cquote} Windows är också ett operativsystem som är skrivet helt ``in house'' (det är inte öppen källkod). 
+    Windows 10 är skrivet i programmeringspråket C\# som är skapat av Microsoft\cite{c}. Microsoft skapade C\# 20 år sedan (2000) när dom ville skriva delar av Windows XP i Java men det fick dem inte eftersom att Oracle sa nej. Så dom utväcklade vad Klaus och Angelika Langer sa i en blog post att ``Java and C\# are almost identical programming languages. Boring repetition that lacks innovation''.\cite{cquote}  
     
+
+    \subsubsection{Proprietärt}
+    Windows är också ett operativsystem som är skrivet helt ``in house'' (det är inte öppen källkod).
     Eftersom att det inte är öppen källkod så vet vi inte riktigt va Windows faktiskt håller på med i bakgrunden. Det gör så att man inte kan ändra på saker lika mycket som man kan på Linux. Dessutom så gör det att Microsoft kan göra lite vad det vill eftersom att det inte måste informera sina användare om alla ändringar (om inte lagen kräver det). Dessutom så är Windows ganska restriktivt i och med att man inte har absolut kontroll över bl.a när man ska/vill uppdatera.
- 
-   Däremot så finns det faktiskt en fördel med att inte ha öppen källkod. Microsoft kan skapa en virtuell monopoli över vissa marknader. T.ex så är Windows (inom pc världen) det bästa operativsystemet att spela på. Det här är eftersom att dom flesta spelen är skapade för att köra på Windows. Det är eftersom att DirectX\cite{directx} finns på Windows men också eftersom att det inte är öppen källkod så är det inte särskillt lätt att piratkopiera spelen och deras innehåll.
+
+
+   Det så finns det faktiskt en fördel med att inte ha öppen källkod. Microsoft kan skapa en virtuell monopoli över vissa marknader. T.ex så är Windows (inom pc världen) det bästa operativsystemet att spela på. Det här är eftersom att dom flesta spelen är skapade för att köra på Windows. Det är eftersom att DirectX\cite{directx} finns på Windows men också eftersom att det inte är öppen källkod så är det inte särskillt lätt att piratkopiera spelen och deras innehåll.
 
 
  
@@ -210,6 +237,12 @@ Jag kom senare på en ide om att använda mig av ett bibliotek som heter ``crite
    \cite{form}
  
    \vspace{1cm}
+
+   \subsection{Prestanda skillnader}
+
+   \subsubsection{Linux}
+   \includegraphics[width=1\textwidth]{bench_linux_average_time}
+
 
 \section{Analys/diskussion}
 

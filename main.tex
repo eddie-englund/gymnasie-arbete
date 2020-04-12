@@ -9,6 +9,7 @@
 \usepackage{titling}
 \usepackage{pgf-pie}
 \usepackage{hyperref}
+\usepackage{csquotes}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \lhead{Eddie Englund Gymansiearbete TEINF17A VT 2020}
@@ -17,6 +18,7 @@
 \renewcommand{\headheight}{14.999pt}
 
 \setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
 
 \emergencystretch=1em
 
@@ -82,7 +84,7 @@
    Apple har flera olika operativsystem\cite{appleOS} I deras olika produkter. I deras datorer så har man macOS, i deras telefoner har dom IOS och i deras nya Ipads så har dom iPadOS.
     Det finns faktisk ett tredje ``operativsystem''; Linux är en så kallad Kernel \cite{redhat} som är det man kan bygga ett operativsystem på. Linux har många olika operativsystem som är kallade för distributioner eller förkortat \textit{``distros''}. Linux är välkänt. Speciellt inom utvecklarvärlden eftersom att det är mycket vänligt för utvecklingsmiljöer, dessutom så har Linux (oftast) en mycket god prestanda på maskiner med mindre processorkraft\cite{whatislinux}. På grund av detta så är bl.a: iPadOS, IOS, macOS, Android och nästintill allting annat som inte har så mycket processorkraft som t.ex en hiss någon form a Linux som operativsystem.
     
-    \section{Bakgrund/Teori}
+\section{Bakgrund/Teori}
 
 
     \subsection{Syfte/Frågeställning}
@@ -195,10 +197,10 @@ Jag kom senare på en ide om att använda mig av ett bibliotek som heter ``crite
   
    Vill ni läsa dessa motiveringar så finns dom här:} \smaller{\url{https://tinyurl.com/rccw2af}}
  
-
+\vspace{1cm}
 \section{Resultat}
 
-\subsection{Formulär}
+    \subsection{Formulär}   \label{form}
 
 \large {Which operating system would have superior performance in tasks like, compiling code, executing code or even intensive workloads like working in a program  like blender or unity?}
  
@@ -217,6 +219,21 @@ Jag kom senare på en ide om att använda mig av ett bibliotek som heter ``crite
    \end{tikzpicture}
  
    \cite{form}
+
+
+   I den första frågar i formuläret så fick vi reda på att 60.0\% av 23 svar, ansåg att Linux skulle ha högre prestanda en Windows.
+
+    \vspace{.5cm}
+    Vi lät även deltagare att motiviera sina åtankar (inte obligatoriskt). Ett mycket välmotiverat svar: \begin{displayquote}I don't have much, just wanted to say that linux will ofc perform better in day to day tasks due to the fact that it consumes less resources in the first place
+
+    on another note, let the numbers speak by themselfs \hyperlink{https://www.phoronix.com/scan.php?page=article&item=win10-debian101-intel} [\dots] just in general, the flexivility that linux provides is the main reason it performs better, as you can fit it much better to the job to have the maximum performance of your hardware
+
+    the way you compile the kernel can drastically change the performance of linux over an application, this can depend on the architecture and instructions you use to compile, small tweaks like buffer sizes to allow for better scalability on very high core count cpu's, the compiler you use like ICC for intel, AOCC for Amd, Clang, GCC, etc...
+    \end{displayquote}
+
+Det här svaret från en av applikanterna är lik och en del av min egen hypotes (läs mer om detta på sida: \pageref{slutsatts})
+
+
    \vspace{3cm}
  
    \large{If you had the option to choose between Windows and Linux which one would you choose? (of course, you can choose any distro for Linux)}
@@ -246,9 +263,23 @@ Jag kom senare på en ide om att använda mig av ett bibliotek som heter ``crite
 
 \section{Analys/diskussion}
 
+\subsection{Formulär}
+
+\subsubsection{Fråga 1}
+Den första frågan var inom förväntningar. Anledningen till detta är att alla utväcklare inte känner till Linux på en djupare nivå än att Ubuntu är en av dom vanligasta distrobutionerna\cite{commondistro}.
+
+\subsubsection{Fråga 2}
+Den andra frågan var däremot ganska fårvånande i och med att 52.5\% av som svarde skulle välja Linux över Windows om dom hade chansen. Detta är ganska förbryllande eftersom att Linux är välkänt för att kräva mycket konfiguration och eller datorintresse. Man kan tänka sig att många utvecklare skulle vara högt dator intresserade men det är inte sant (enligt min upplevelse i och kring forum). Många frontend utvecklare använder sig of ta av proprietära program som Adobe Experience Design (Adobe Xd). 
+
+\subsection{Problem med metodiken}
+
+\subsubsection{Formuläret och vinklad data}
+
+Vinklad data kan och formodligen är ett problem med formuläret som jag har skickat ut. Anledningen bakom det vinklade datan som jag har fått ut av formuläret är ställena jag har skickat ut det. Jag har skickat formuläret på design/web/programmerings relaterade forum och även skickade det via min mor som är team leader för en grupp utväcklare. Om jag hade skickat formuläret på andra mer publika medium så hade förmodligen datan sätt mycket annorlunda ut eftersom att manjoriteten av befolkning inte känner till Linux även dock det finns över allt runt om kring os. Dom finns i våra telefoner, datorerer, klockor, mm.
 
 
-\section{Slutsats}
+\section{Slutsats}\label{slutsatts}
+
 
 
 \printbibliography

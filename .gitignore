@@ -6,7 +6,7 @@ history
 *.synctex.gz
 *.toc
 *
-!program/benches/target/criterion/*
+!program/target/criterion/**/*
 !main.pdf
 !main.tex
 !program/*

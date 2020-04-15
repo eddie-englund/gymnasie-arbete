@@ -8,6 +8,7 @@
 \usepackage{titlesec}
 \usepackage{titling}
 \usepackage{pgf-pie}
+\usepackage[binary-units=true, abbreviations=true]{siunitx}
 \usepackage{hyperref}
 \usepackage{csquotes}
 \usepackage{fancyhdr}
@@ -77,28 +78,29 @@
 \section{Inledning}
  
  
-   I och med att världen blir mer och mer digitaliserad för varje dag som går, så är det inte konstigt att det finns en massiv marknad med olika alternativ för nästintill allting i den digitaliserade världen. Allt från telefoner till hemdatorer eller kanske till och med robotdammsugare eller också en robotgräsklippare. Alla dessa digitaliserade mirakel har en sak gemensamt. Dem alla har ett operativsystem.
+   I och med att världen blir mer och mer digitaliserad för varje dag som går, så är det inte konstigt att det finns en massiv marknad med olika alternativ för nästintill allting i den digitaliserade världen. Allt från telefoner till hemdatorer, robotdammsugare eller också en robotgräsklippare. Alla dessa digitaliserade mirakel har en sak gemensamt. Dem alla har ett operativsystem.
  
    Världens mest kända operativsystem\cite{winstat} är Microsoft Windows. Microsoft har en lång rad med olika versioner av sitt operativsystem\cite{windows}: Windows XP, Windows Vista, Windows 7[\dots] och deras senaste (och förmodligen sista) operativsystem Windows 10.
     
    Apple har flera olika operativsystem\cite{appleOS} I deras olika produkter. I deras datorer så har man macOS, i deras telefoner har dom IOS och i deras nya Ipads så har dom iPadOS.
-    Det finns faktisk ett tredje ``operativsystem''; Linux är en så kallad Kernel \cite{redhat} som är det man kan bygga ett operativsystem på. Linux har många olika operativsystem som är kallade för distributioner eller förkortat \textit{``distros''}. Linux är välkänt. Speciellt inom utvecklarvärlden eftersom att det är mycket vänligt för utvecklingsmiljöer, dessutom så har Linux (oftast) en mycket god prestanda på maskiner med mindre processorkraft\cite{whatislinux}. På grund av detta så är bl.a: iPadOS, IOS, macOS, Android och nästintill allting annat som inte har så mycket processorkraft som t.ex en hiss någon form a Linux som operativsystem.
+    Det finns faktisk ett annat stort ``operativsystem''; Linux är en så kallad Kernel \cite{redhat} som är det man kan bygga ett operativsystem på. Linux har många olika operativsystem som är kallade för distributioner eller förkortat \textit{``distros''}. Linux är välkänt. Speciellt inom utvecklarvärlden eftersom att det är mycket vänligt för utvecklingsmiljöer, dessutom så har Linux (oftast) en mycket god prestanda på maskiner med mindre processorkraft\cite{whatislinux}. På grund av detta så är bl.a: iPadOS, IOS, macOS, Android och nästintill allting annat som inte har så mycket processorkraft som t.ex en hiss någon form a Linux som operativsystem.
     
 \section{Bakgrund/Teori}
 
 
     \subsection{Syfte/Frågeställning}
-    Udersökningens syfte är att ta reda på om Linux eller Windows har olika prestanda och varför. Är det så att dom har olika prestana i olika typer av applikationer eller är det konstant? Undersökningen kommer att använda en rad olika tester för att ta reda på om hypotesen är san.
+    Udersökningens syfte är att ta reda på om Linux eller Windows har olika prestanda och varför. Är det så att dom har olika prestanda i olika typer av applikationer eller är det konstant? Undersökningen kommer att använda en rad olika tester för att ta reda på om hypotesen är san.
  
 
     \subsection{Hypotes}
 
-    Utifrån mina egen upplevelse så är Linux (när man väl har konfiguerarat det ordentligt) en mycket mer stabil och snabbare upplevelse en Windows 10.
+    Utifrån mina egen upplevelse så är Linux (när man väl har konfiguerarat det ordentligt) en mycket mer stabil och snabbare upplevelse en Windows 10. I och med mina tidigare upplevelser så tror jag att Linux kommer att vinna. Kanske inte med stora marginaler men det kommer förmodligen att vinna.
+    Det finns en anledning till att Linux finns i majorieten av operativsystem men också i majoriteten av servers som clould servers och liknande.
  
 
     \subsection{Linux}
  
-   Linux är inte operativsystem. Däremot, så är Linux det som kallas för en ``kernel''\cite{redhat}. Det är hjärtat av operativsystemet eller kanske lite bättre jämfört med hjärnan av operativsystemet. Kerneln är en typ av mellanhand, mellan mjukvaran och hårdvaran. Den hanterar minnet, olika typer av processer, drivrutiner, systemanrop och säkerhet.
+   Linux är inte operativsystem. Däremot, så är Linux det som kallas för en ``kernel''\cite{redhat}. Det är hjärtat av operativsystemet eller kanske lite bättre jämfört med hjärnan av operativsystemet. Kerneln är en typ av mellanhand, mellan mjukvaran och hårdvaran. Den hanterar minnet, olika typer av processer, drivrutiner, systemanrop och säkerhet\cite{redhat}.
  
 
     \subsubsection{Distributioner}
@@ -107,11 +109,11 @@
 
    \subsubsection{Repositories}
 
-    En högt definerande egenskap hos Linux är användandet av ``repositories''. Repositories är arkiv eller data banked med mjukvara. Man använder sig utav dessa för att lättare och säkert installera program.
+    En högt definerande egenskap hos Linux är användandet av ``repositories''. Repositories är arkiv eller databank med mjukvara. Man använder sig utav dessa för att lättare och säkert installera program.
 
-    Normalt sätt när man ska installera ett program på Windows eller Mac så öppnar man en webbläsare och söker på mjukvaran man vill ha, går till sidan, laddar ner en program installatör för det programmet man vill ha, sedan kör man den. Efter det kan man ta bort installören, om man kommer ihåg det.
+    Normalt sätt när man ska installera ett program på Windows eller Mac så öppnar man en webbläsare och söker på mjukvaran man vill ha, går till sidan, laddar ner en program installatör för det programmet man vill ha, sedan kör man den. Efter det kan man ta bort installören(om man kommer ihåg att göra det).
     
-    Men inte på Linux. På Linux så använder man offtast sig av en terminal och ett kommando (detta varierar på distron).
+    Men inte på Linux. På Linux så använder man oftast sig av en terminal och ett kommando (detta varierar på distron).
     På Manjaro som är Arch baserad så använder man sig utav pacman\cite{pacman}. Pacman är en ``package manager''\cite{pkgmanager}. Den hanterer paket (mjukvara) som man vill ta bort, installera eller kanske uppdatera.
 
     För att installera ett programm på Manjaro så skulle man skriva: sudo pacman -S programnamn. 
@@ -128,9 +130,7 @@
    \subsubsection{Öppen källkod}
 
 
-   Den största skillnaden mellan Linux och Windows är att Linux inte är proprietär och har öppen källkod vilket betyder att vem som helst kan bidra med kod för att; göra kerneln eller distributionen bättre och lägga till fler användbara funktioner, men även också att fixa buggar. Öppen källkod har även en annan fördel och det är att koden oftast inte är så kallad \textit{``bloated''}, alltså att det finns kod eller funktioner som inte behövs eller att kod kvaliteten inte är bra. Detta leder till att prestandan på Linux är mycket hög.
-    \vspace{1cm}
-   Den distributionen som jag har valt att använda är Manjaro\cite{manjaro}. Manjaro är en så kallad \textit{Arch based distro}. Den är baserad på en annan distro som heter Arch Linux som ofta blir kallat för den bästa distron. Däremot så gör Manjaro det lättare att komma igång och så har Manjaro dem flesta fördelarna som Arch Linux har.
+   Den största skillnaden mellan Linux och Windows är att Linux inte är proprietär och har öppen källkod vilket betyder att vem som helst kan bidra med kod för att göra kerneln eller distributionen bättre och dessutom lägga till fler användbara funktioner, men även också att fixa buggar. Öppen källkod har även en annan fördel och det är att koden oftast inte är så kallad \textit{``bloated''}, alltså att det finns kod eller funktioner som inte behövs eller att kod kvaliteten inte är bra. Detta leder till att prestandan på Linux är mycket hög.
 
    \subsection{Windows}
 
@@ -151,6 +151,8 @@
  
 \section{Metod}
  
+\subsection{Distrobution}
+Den distributionen som jag har valt att använda är Manjaro\cite{manjaro}. Manjaro är en så kallad \textit{Arch based distro}. Den är baserad på en annan distro som heter Arch Linux som ofta blir kallat för den bästa distron. Däremot så gör Manjaro det lättare att komma igång och så har Manjaro dem flesta fördelarna som Arch Linux har.
 
 \subsection{Språk och program}
  
@@ -231,7 +233,7 @@ Jag kom senare på en ide om att använda mig av ett bibliotek som heter ``crite
     the way you compile the kernel can drastically change the performance of linux over an application, this can depend on the architecture and instructions you use to compile, small tweaks like buffer sizes to allow for better scalability on very high core count cpu's, the compiler you use like ICC for intel, AOCC for Amd, Clang, GCC, etc...
     \end{displayquote}
 
-Det här svaret från en av applikanterna är lik och en del av min egen hypotes (läs mer om detta på sida: \pageref{slutsatts})
+Det här svaret från en av applikanterna är lik och en del av min egen hypotes (läs mer om detta på sida: \pageref{slutsats})
 
 
    \vspace{3cm}
@@ -257,8 +259,14 @@ Det här svaret från en av applikanterna är lik och en del av min egen hypotes
 
    \subsection{Prestanda skillnader}
 
-   \subsubsection{Linux}
+   \subsubsection{Linux(Manjaro)}
    \includegraphics[width=1\textwidth]{bench_linux_average_time}
+   \includegraphics[width=.8\textwidth]{add_stats_linux}
+
+
+   \subsection{Windows 10}
+   \includegraphics[width=1\textwidth]{bench_windows_average_time}
+   \includegraphics[width=1\textwidth]{add_stats_windows}
 
 
 \section{Analys/diskussion}
@@ -275,10 +283,22 @@ Den andra frågan var däremot ganska fårvånande i och med att 52.5\% av som s
 
 \subsubsection{Formuläret och vinklad data}
 
-Vinklad data kan och formodligen är ett problem med formuläret som jag har skickat ut. Anledningen bakom det vinklade datan som jag har fått ut av formuläret är ställena jag har skickat ut det. Jag har skickat formuläret på design/web/programmerings relaterade forum och även skickade det via min mor som är team leader för en grupp utväcklare. Om jag hade skickat formuläret på andra mer publika medium så hade förmodligen datan sätt mycket annorlunda ut eftersom att manjoriteten av befolkning inte känner till Linux även dock det finns över allt runt om kring os. Dom finns i våra telefoner, datorerer, klockor, mm.
+Vinklad data kan och förmodligen är ett problem med formuläret som jag har skickat ut. Anledningen bakom det vinklade datan som jag har fått ut av formuläret är ställena jag har skickat ut det. Jag har skickat formuläret på design/web/programmerings relaterade forum och även skickade det via min mor som är team leader för en grupp utväcklare. Om jag hade skickat formuläret på andra mer publika medium så hade förmodligen datan sätt mycket annorlunda ut eftersom att majoriteten av befolkning inte känner till Linux även dock det finns över allt runt om kring oss (dem finns i våra telefoner, datorerer, klockor, mm.). 
+
+\subsubsection{Använd Mjukvara}
+
+Om man ska utföra en så precis benchmark så möjligt när det kommer till mjukvara. Eftersom att jag har använt båda operativsystemen så har jag flera andra program installerade. Detta kan leda till att det finns fler bakrundsproccesser igång vilket teoiretiskt sätt skulle kunna leda till försämrade resultalt.
+
+Om jag skulle kunna gjort det, så skulle jag ha rensat min maskin helt och ominstallerat båda operativ systemen och sedan endast installerat dom paket/mjukvara jag behöver.
+
+\subsection{Okända variabler som skulle kunna ha effekt på resultatet}
+
+\subsubsection{Datorer och värme}
+
+Alla datorer kräver elektrisitet. Min CPU (Amd ryzen r7 1700 \SI{3.0}{\giga\hertz}) drar 65W (TDP)\cite{ryzen1700spec} men det kräver förmodligen mer en så eftersom att jag har överclockat min CPU till \SI{3.9}{\giga\hertz}.
 
 
-\section{Slutsats}\label{slutsatts}
+\section{Slutsats}\label{slutsats}
 
 
 

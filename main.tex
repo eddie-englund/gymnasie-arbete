@@ -12,6 +12,7 @@
 \usepackage{hyperref}
 \usepackage{csquotes}
 \usepackage{fancyhdr}
+\usepackage{tocloft}
 \pagestyle{fancy}
 \lhead{Eddie Englund Gymnasiearbete TEINF17A VT 2020}
 \rhead{\thepage}
@@ -32,9 +33,26 @@
 \title{Linux vs Windows\\[0.2em]\smaller{}En djupgående analys av prestandaskillnader mellan Microsoft Windows och Manjaro Linux}
 \date{VT 2020}
 
-\renewcommand{\abstractname}{Abstract}
 \renewcommand{\abstract}{Abstract}
 \renewcommand*{\bibfont}{\small}
+\renewcommand*{\abstractname}{Abstract}
+
+\makeatletter
+\renewenvironment{abstract}{%
+    \if@twocolumn
+    \renewcommand*{\abstractname}{Abstract}
+
+      \section*{\abstractname}%
+    \else %% <- here I've removed \small
+      \begin{flushleft}%
+        \renewcommand*{\abstractname}{Abstract}
+
+        {\bfseries \Large\abstractname\vspace{\z@}}%  %% <- here I've added \Large
+      \end{flushleft}%
+      \quotation
+    \fi}
+    {\if@twocolumn\else\endquotation\fi}
+\makeatother
 
 
 \begin{document}
@@ -45,7 +63,7 @@
     \begin{center}
         \thispagestyle{empty}
     
-        \includegraphics[width=0.15\textwidth]{nti}\par\vspace{1cm}
+        \includegraphics[width=0.15\textwidth]{nti.png}\par\vspace{1cm}
 
     {\scshape\LARGE NTI Gymnasiet Gärdet \par}
     \vspace{1cm}
@@ -63,16 +81,22 @@
     \end{center}
 \end{titlepage}
 
+\setlength{\cftbeforetoctitleskip}{-3em}
+\tableofcontents
+
+\vspace{2cm}
+\begin{abstract}
+
+For every day that goes our world becomes more and more digitalised, and thanks to that we have lots and lots of options and there's lots of companies and startups that make everything from smart vacuum cleaners to smartwatches and cars. However, with options comes choosing one or more of them. In this analasys we will take a deep dive and look into the performance of two diffirent operatingsystems. Namely: Manjaro Linux and Windows 10. Because of this it's highly intresting to figure out if there's relevant performance diffirences between the two operating systems and to do so, low level languages/system languages will be used to make a benchmark to figure out if there's a relevant diffirence between Manjaro Linux and Windows 10.
+
+\end{abstract}
 
 \section{Sammanfattning}\label{sum}
 
-    \begin{abstract}
 
-    \end{abstract}
 
-\tableofcontents
 
-\vspace{3cm}
+\vspace{1cm}
 
     
 \section{Inledning}
@@ -82,19 +106,21 @@
  
    Världens mest kända operativsystem\cite{winstat} är Microsoft Windows. Microsoft har en lång rad med olika versioner av sitt operativsystem\cite{windows}: Windows XP, Windows Vista, Windows 7[\dots] och deras senaste (och förmodligen sista) operativsystem Windows 10.
     
-   Apple har flera olika operativsystem\cite{appleOS} I deras olika produkter. I deras datorer så har man macOS, i deras telefoner har dom iOS och i deras nya iPads så har dom iPadOS.
+   Apple har flera olika operativsystem I deras olika produkter. I deras datorer så har dom macOS, i deras telefoner har dom iOS och i deras nya iPads så har dom iPadOS.\cite{appleOS}
     Det finns faktisk ett annat stort ``operativsystem''; Linux är en så kallad Kernel \cite{redhat} som är det man kan bygga ett operativsystem på. Linux har många olika operativsystem som är kallade för distributioner eller förkortat \textit{``distros''}. Linux är välkänt, speciellt inom utvecklar världen eftersom att det är mycket vänligt för utvecklingsmiljöer, dessutom så har Linux (oftast) en mycket god prestanda på maskiner med mindre processorkraft\cite{whatislinux}. På grund av detta så är bl.a: iPadOS, iOS, macOS, Android och nästintill allting annat som inte har så mycket processorkraft som t.ex en hiss någon form a Linux som operativsystem.
+
+    Men vad är skillnaderna på dom här operativsystemen och är prestandan annorlunda mellan dom?
     
 \section{Bakgrund/Teori}
 
 
     \subsection{Syfte/Frågeställning}
-    Undersökningens syfte är att ta reda på om Linux eller Windows har olika prestanda och varför. Är det så att dom har olika prestanda i olika typer av applikationer eller är det konstant? Undersökningen kommer att använda en rad olika tester för att ta reda på om hypotesen är sann.
+    Undersökningens syfte är att ta reda på om Linux eller Windows har olika prestanda och varför. Är det så att dom har olika prestanda i olika typer av applikationer eller är prestanda skillnaden konstant? Undersökningen kommer att använda en rad olika tester för att ta reda på om hypotesen nedan är sann.
  
 
     \subsection{Hypotes}
 
-    Utifrån mina egen upplevelse så är Linux (när man väl har konfigurerat det ordentligt) en mycket mer stabil och snabbare upplevelse en Windows 10. I och med mina tidigare upplevelser så tror jag att Linux kommer att vinna. Kanske inte med stora marginaler men det kommer förmodligen att vinna.
+    Utifrån mina egen upplevelse så är Linux (när man väl har konfigurerat det ordentligt) en mycket mer stabil och snabbare upplevelse än Windows 10. I och med mina tidigare upplevelser så tror jag att Linux kommer att vinna. Linux kanske inte kommer att ha så mycket bättre resultat med stora marginaler men jag tror att Linux kommer att ha bättre prestanda.
     Det finns en anledning till att Linux finns i majoriteten av operativsystem men också i majoriteten av servers som cloud servers och liknande.
  
 
@@ -105,25 +131,23 @@
 
     \subsubsection{Distributioner}
 
-   Eftersom att Linux är en kernel så finns det många så kallade distributioner/versioner (operativsystem). Skillnaderna på dem olika distributionerna kan variera högt, oftast handlar de största skillnaderna om vilka så kallad ``repositories'' (arkiv med mjukvara) man använder för att distribuera mjukvara. Dessutom så kan det handla om vilka filsystem man använder men också hur mycket eller hur lite förinstallerade program som finns när man installerar distributionen.
+   Eftersom att Linux är en kernel så finns det många så kallade distributioner/versioner (operativsystem). Skillnaderna mellan dem olika distributionerna kan variera högt, oftast handlar de största skillnaderna om vilka så kallad ``repositories'' (arkiv med mjukvara) man använder för att distribuera mjukvara. Dessutom så kan det handla om vilka filsystem man använder men också hur mycket eller hur lite förinstallerade program som finns när man installerar distributionen.
 
    \subsubsection{Repositories}
 
-    En högt definierande egenskap hos Linux är användandet av ``repositories''. Repositories är arkiv eller databank med mjukvara. Man använder sig utav dessa för att lättare och säkert installera program.
+    En högt definierande egenskap hos Linux är användandet av ``repositories''. Repositories är arkiv eller en databank med mjukvara. Man använder sig utav dessa för att lättare och säkert installera program.
 
-    Normalt sätt när man ska installera ett program på Windows eller Mac så öppnar man en webbläsare och söker på mjukvaran man vill ha, går till sidan, laddar ner en program installatör för det programet man vill ha, sedan kör man den. Efter det kan man ta bort installatören(om man kommer ihåg att göra det).
+    Normalt sett när man ska installera ett program på Windows eller Mac så öppnar man en webbläsare och söker på mjukvaran man vill ha, går till sidan, laddar ner en program installatör för det programet man vill ha, sedan kör man den. Efter det kan man ta bort installatören(om man kommer ihåg att göra det).
     
     Men inte på Linux. På Linux så använder man oftast sig av en terminal och ett kommando (detta varierar på distron).
     På Manjaro som är Arch baserad så använder man sig utav pacman\cite{pacman}. Pacman är en ``package manager''\cite{pkgmanager}. Den hanterar paket (mjukvara) som man vill ta bort, installera eller kanske uppdatera.
 
-    För att installera ett program på Manjaro så skulle man skriva: sudo pacman -S programnamn. 
-
-    \small{notera att det går att installera program på andra sätt}
+    För att installera ett program på Manjaro så skulle man skriva: sudo pacman -S programnamn. Notera att det går att installera program på andra sätt
 
 
     \subsubsection{Absolut kontroll}
 
-   En annan fördel med Linux är att man har absolut kontroll. Man kan byta så kallade \textit{window managers} eller förkortat \textit{wm}\cite{wm}. Man kan även göra om Linux kerneln ifall man vill göra något specifikt eller kanske inte behöver bitar av den för att optimera sin maskin. Detta är mycket vanligt inom låg processor kraftiga maskiner som hissar eller smart klockor.
+   En annan fördel med Linux är att man har absolut kontroll. Man kan byta så kallade \textit{window managers} eller förkortat \textit{wm}\cite{wm}. Man kan även göra om Linux kerneln ifall man vill göra något specifikt eller kanske inte behöver bitar av den för att optimera sin maskin. Detta är mycket vanligt inom låg processor kraftiga maskiner som hissar eller smartklockor.
 
    Allt detta är tack vare att Linux har en öppen källkod och tillåter användare att göra vad dom vill med det. Detta skulle aldrig vara möjligt på Windows eller Mac (om man inte crackar/gör illegala saker) eftersom att deras licenser säger att man inte får och dessutom så får man inte distribuera sina ändringar ifall man har gjort dem.
 
@@ -137,7 +161,7 @@
 
     \subsubsection{Skrivet I flera språk}
     
-    Windows 10 är skrivet i programeringsspråket C\# som är skapat av Microsoft\cite{c}. Microsoft skapade C\# 20 år sedan (2000) när dom ville skriva delar av Windows XP i Java men det fick dem inte eftersom att Oracle sa nej. Så dom utvecklade  vad Klaus och Angelika Langer sa i en blog post att ``Java and C\# are almost identical programing languages. Boring repetition that lacks innovation''.\cite{cquote}  
+    Windows 10 är skrivet i programeringsspråket C\# som är skapat av Microsoft\cite{c}. Microsoft skapade C\# för 20 år sedan (2000) när de ville skriva delar av Windows XP i Java men det fick dem inte eftersom att Oracle sa nej. Så de utvecklade vad Klaus och Angelika Langer sa i ett bloginlägg att ``Java and C\# are almost identical programing languages. Boring repetition that lacks innovation''.\cite{cquote}  
     
 
     \subsubsection{Proprietärt}
@@ -152,32 +176,30 @@
 \section{Metod}
  
 \subsection{Distribution}
-Den distributionen som jag har valt att använda är Manjaro\cite{manjaro}. Manjaro är en så kallad \textit{Arch based distro}. Den är baserad på en annan distro som heter Arch Linux som ofta blir kallat för den bästa distron. Däremot så gör Manjaro det lättare att komma igång och så har Manjaro dem flesta fördelarna som Arch Linux har.
+Den distributionen som jag har valt att använda är Manjaro\cite{manjaro}. Manjaro är en så kallad \textit{Arch based distro}. Den är baserad på en annan distro som heter Arch Linux som ofta blir kallat för en av dom bästa distributionerna\cite{archIsTheBest}. Däremot så gör Manjaro det lättare att komma igång och så har Manjaro dem flesta fördelarna som Arch Linux har.
 
 \subsection{Språk och program}
  
 För att ta reda på om det finns prestandaskillnader mellan Windows och Linux (manjaro) så behövde jag ta reda på vilket programeringsspråk som vore relevant för att mäta prestandan mellan Windows och Linux(Manjaro) och en del andra saker.
 
 \begin{enumerate}
-   \item Vilket språk bör användas och varför?
+   \item Vilket programeringsspråk bör användas och varför?
    \item Vad bör man utföra för uppgift i programet för att få maskinerna att arbeta?
    \item Hur mäter vi prestandan?
    \item Hur kan vi verifiera våra mätningar?
 \end{enumerate}
  
-Den första frågan ledde till ett ganska djupt hål eftersom att det finns extremt många programeringsspråk. Bara för att nämna ett par: Java, Javascript, Python, C, C++, C\#, Ruby, Rust, mm. 
+
+\subsubsection{Val av programeringsspråk}
+
+När jag skulle ta reda på vilket programeringsspråk jag skulle använda för att skriva benchmarket, spenderade jag mycket tid till att läsa litteratur kring programeringsspråk. Detta var mycket svårt eftersom att det finns extremt många programeringsspråk. Bara för att nämna ett par: Java, Javascript, Python, C, C++, C\#, Ruby, Rust, mm. 
 
 
-För att kunna välja ett språk så kan vi börja med att utesluta dem långsamma språken. Då så utesluts: Ruby, Javascript och Python. Ruby, Javascript och Python är alla väldigt långsamma eftersom att (bl.a) så har dem inte multi trådars kapabilitet (programmen kan inte göra flera saker samtidigt).
+Efter att jag hade läst litteraturen relaterande till programeringsspråken så kom jag fram till att jag skulle skriva mitt program i språket Rust.\cite{rust} Anledningen till detta är att Rust är ett snabbt, stabilt och ett ``systemnivå språk''. Dessutom så har Rust lite så kallat \textit{``garbage collection''}\cite{garbage}, alltså att Rust bl.a gör sig av med oanvända variabler som tar platts i RAM-minnet. Dessutom så valde jag Rust över C och C++ eftersom att jag har använt mig av det tidigare.
 
- Python är väldigt långsamt eftersom att det var gjort för att vara lätt att skriva vilket skapar en hel del extra uppgifter som kompilator/runtimen måste utföra vilket gör den större. Detta gör att det tar längre tid att kompilera till maskinkod och därför tar det längre tid att utföra en uppgift. 
- 
- Vi vill heller inte ha språk som måste bli \textit{interpreted} i runtime. Då försvinner Java. Detta eftersom att Java har det som kallas för \textit{JVM} vilket är kort för ``Java Virtual Machine''. Detta var skapat för att ha ett kompabilitets lager så att man ska kunna köra Java program på alla datorer oavsett operativsystem. 
- 
- Därefter så vore det också bra om man kan köra/skriva språket på Linux utan att lägga till extra kompabilitets lager som Javas JVM. Då försvinner C\# eftersom att, för att köra det på Linux så behöver man det som kallas för \textit{``.Net Core''} vilket fungerar som JVM och av samma anledning så vill vi inte ha det. Nu har vi endast C, C++ och Rust kvar och eftersom att jag har erfarenhet med Rust och eftersom att Rust inte är lika svårt med bl.a minneshantering så slutade det med att jag valde Rust som språk för att skriva mitt program i.
- 
- 
-Så nu har vi ett språk som vi vet är snabbt, stabilt och kan köras på flera maskiner (efter kompilering till den plattformen). Vad bör programet utföra för uppgift?
+Jag valde att ta bort programeringsspråken som var långsamma och de programeringsspråk som är \textit{``interpreted''}\cite{Interpreted-language}. Dessutom så tog jag bort språken som har kompabilitets lager. Dessa kritierer tog bort: Java, Javascript, Ruby, C\# och Python.
+
+\subsubsection{Vad ska programmet utför för uppgift, hur mäter jag prestandan och hur verifierar jag mina resultat?}
 
 Ett problem som uppstod när jag först försökte fylla en vektor med 1 gigabyte utav integers och sedan loopa programet för att ha det igång så att jag kan verifiera att den gör det den ska, så la jag snabbt märke till att programet inte tog i närheten så mycket som jag hade sagt åt språket att göra.
 
@@ -188,9 +210,9 @@ Jag kom senare på en idé om att använda mig av ett bibliotek som heter ``crit
  
 \subsection{Vad tror utvecklare?}
  
-   För att ta reda på vad andra utvecklare har för hypotes/teori om prestandan mellan Linux och Windows 10, varför prestandan skulle vara annorlunda, vilket operativsystem dom föredrar och varför. Så delades det runt ett formulär runt omkring olika programmerings/utvecklingsforum men även genom kontakter lyckats skicka vidare formuläret i professionella utvecklingsmiljöer.
+   För att ta reda på vad andra utvecklare har för hypotes/teori om prestandan mellan Linux och Windows 10, varför prestandan skulle vara annorlunda, vilket operativsystem de föredrar och varför, så delades det runt ett formulär runt omkring olika programmerings/utvecklingsforum men även genom kontakter lyckats skicka vidare enkäten i professionella utvecklingsmiljöer.
  
-   Notera att formuläret var skrivet på engelska för att kunna nå ut till så många utvecklare så möjligt.
+   Notera att enkäten var skrivet på engelska för att kunna nå ut till så många utvecklare så möjligt.
     
    \vspace{1cm}
  
@@ -208,7 +230,7 @@ Jag kom senare på en idé om att använda mig av ett bibliotek som heter ``crit
  
    \vspace{.5cm}
  
-   \normalsize I denna fråga så frågade vi olika utvecklare vad dom trodde kring Linux. Tror dom att Linux eller Windows har bättre prestanda när det kommer till att kompilera/köra/använda olika applikationer/program
+   \normalsize I denna fråga så frågades olika utvecklare vad de trodde kring Linux. Tror dom att Linux eller Windows har bättre prestanda när det kommer till att kompilera/köra/använda olika applikationer/program?
  
  
    \vspace{1cm}
@@ -223,10 +245,10 @@ Jag kom senare på en idé om att använda mig av ett bibliotek som heter ``crit
    \cite{form}
 
 
-   I den första frågan i formuläret så fick vi reda på att 60.0\% av 23 svar, ansåg att Linux skulle ha högre prestanda en Windows.
+   I denna fråga så tog man reda på att 60.0\% av 23 svar, ansåg att Linux skulle ha högre prestanda en Windows.
 
     \vspace{.5cm}
-    Vi lät även deltagare att motivera sina tankar (inte obligatoriskt). Ett mycket välmotiverat svar: \begin{displayquote}I don't have much, just wanted to say that linux will ofc perform better in day to day tasks due to the fact that it consumes less resources in the first place
+    I enkäten så läts deltagarna motivera sina tankar (inte obligatoriskt). Ett mycket välmotiverat svar: \begin{displayquote}I don't have much, just wanted to say that linux will ofc perform better in day to day tasks due to the fact that it consumes less resources in the first place
 
     on another note, let the numbers speak by themselves \hyperlink{https://www.phoronix.com/scan.php?page=article&item=win10-debian101-intel} [\dots] just in general, the flexibility that linux provides is the main reason it performs better, as you can fit it much better to the job to have the maximum performance of your hardware
 
@@ -241,7 +263,7 @@ Det här svaret från en av applikanterna är lik och en del av min egen hypotes
   
    \vspace{.5cm}
   
-   \normalsize I Denna fråga så frågar vi utvecklare vilket operativsystem dom skulle välja om dom hade chansen. Vi fick ett ganska fascinerande resultat. Om vi hade fått ett jämt antal svar så hade det varit en rak 50 50 på denna fråga men den tjugotredje personen som svarade på frågan valde Linux över Windows.
+   \normalsize I Denna fråga så frågar vi utvecklare vilket operativsystem de skulle välja om de hade chansen. Vi fick ett ganska fascinerande resultat. Om vi hade fått ett jämt antal svar så hade det varit en rak 50 50 på denna fråga men den tjugotredje personen som svarade på frågan valde Linux över Windows.
  
    \vspace{1cm}
  
@@ -276,13 +298,13 @@ Det här svaret från en av applikanterna är lik och en del av min egen hypotes
 Den första frågan var inom förväntningar. Anledningen till detta är att alla utvecklare inte känner till Linux på en djupare nivå än att Ubuntu är en av dom vanligasta distributionerna\cite{commondistro}.
 
 \subsubsection{Fråga 2}
-Den andra frågan var däremot ganska förvånande i och med att 52.5\% av som svarade skulle välja Linux över Windows om dom hade chansen. Detta är ganska förbryllande eftersom att Linux är välkänt för att kräva mycket konfiguration och eller datorintresse. Man kan tänka sig att många utvecklare skulle vara högt dator intresserade men det är inte sant (enligt min upplevelse i och kring forum). Många frontend utvecklare använder sig ofta av proprietära program som Adobe Experience Design (Adobe Xd). 
+Den andra frågan var däremot ganska förvånande i och med att 52.5\% av som svarade skulle välja Linux över Windows om de hade chansen. Detta är ganska förbryllande eftersom att Linux är välkänt för att kräva mycket konfiguration och/eller datorintresse. Man kan tänka sig att många utvecklare skulle vara högt dator intresserade men det är inte sant (enligt min upplevelse i och kring forum). Många frontend utvecklare använder sig ofta av proprietära program som Adobe Experience Design (Adobe Xd). 
 
 \subsection{Problem med metodiken}
 
-\subsubsection{Formuläret och vinklad data}
+\subsubsection{Enkäten och vinklad data}
 
-Vinklad data kan och förmodligen är ett problem med formuläret som jag har skickat ut. Anledningen bakom den vinklade datan som jag har fått ut av formuläret är ställena jag har skickat ut det. Jag har skickat formuläret på design/web/programmerings relaterade forum och även skickade det via min mor som är team leader för en grupp utvecklare. Om jag hade skickat formuläret på andra mer publika medium så hade förmodligen datan sett mycket annorlunda ut eftersom att majoriteten av befolkning inte känner till Linux även dock det finns över allt runt om kring oss (dem finns i våra telefoner, datorer, klockor, mm.). 
+Vinklad data kan och är förmodligen ett problem med enkäten som jag har skickat ut. Anledningen bakom den vinklade datan som jag har fått ut av enkäten är ställena jag har skickat ut det. Jag har skickat enkäten på design/web/programmerings relaterade forum och även skickade det via min mor som är team leader för en grupp utvecklare. Om jag hade skickat enkäten på andra mer publika medium så hade förmodligen datan sett mycket annorlunda ut eftersom att majoriteten av befolkning inte känner till Linux även dock det finns över allt runt om kring oss (dem finns i våra telefoner, datorer, klockor, mm.). 
 
 \subsection{Okända variabler som skulle kunna ha effekt på resultatet}
 

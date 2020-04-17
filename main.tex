@@ -27,7 +27,7 @@
 \setcounter{secnumdepth}{0}
 
 \bibliography{bibliography.bib}
-\addbibresource{biliography.bib}
+\addbibresource{bibliography.bib}
 
 \author{Eddie Englund}
 \title{Linux vs Windows\\[0.2em]\smaller{}En djupgående analys av prestandaskillnader mellan Microsoft Windows och Manjaro Linux}
@@ -86,14 +86,15 @@
 
 \vspace{2cm}
 \begin{abstract}
-
+%% rewrite this
 For every day that goes our world becomes more and more digitalised, and thanks to that we have lots and lots of options and there's lots of companies and startups that make everything from smart vacuum cleaners to smartwatches and cars. However, with options comes choosing one or more of them. In this analasys we will take a deep dive and look into the performance of two diffirent operatingsystems. Namely: Manjaro Linux and Windows 10. Because of this it's highly intresting to figure out if there's relevant performance diffirences between the two operating systems and to do so, low level languages/system languages will be used to make a benchmark to figure out if there's a relevant diffirence between Manjaro Linux and Windows 10.
 
 \end{abstract}
 
 \section{Sammanfattning}\label{sum}
 
-
+I den här analysen så kommer det att tas reda på om Manjaro Linux och Windows 10 har olika prestanda och varför. Efter att att testen som skrevs hade körts så sa datan att Manjaro Linux var snabbare en Windows 10 med ungefär 10 mikro sekunder. Medans detta kan ses som mycket lite så måste vi komma ihåg att uppgiften som datorn utförde var att köra fibonacci sekvensen vilket är relativt lätt. Förvisso så är det så att prestanda testet bed fibonacci sekvensen kommer nära gränserna av 64bit så är det fortfarande relativt lätt. Så om det finns skillnader här (vilket det gör) så betyder det att om man skalar upp testerna på ett mycket större set så bör det teoretiskt sett var en högre prestanda skillnad. 
+%% TODO: Finish this after you've finished the slutsats
 
 
 \vspace{1cm}
@@ -278,17 +279,18 @@ Det här svaret från en av applikanterna är lik och en del av min egen hypotes
  
    \vspace{1cm}
 
-   \subsection{Prestanda skillnader}
+   \subsection{Prestanda skillnader}\label{tests}
 
    \subsubsection{Linux(Manjaro)}
    \includegraphics[width=1\textwidth]{bench_linux_average_time}
    \includegraphics[width=.8\textwidth]{add_stats_linux}
 
-
+   Notera att en fel gjordes när graferna var skapade. Det ska \textbf{INTE} stå ``Average time (\textbf{ms})'' utan det ska stå ``Average time (\textbf{us}) alltså mikrosekunder.
    \subsection{Windows 10}
    \includegraphics[width=1\textwidth]{bench_windows_average_time}
    \includegraphics[width=1\textwidth]{add_stats_windows}
 
+   Notera att en fel gjordes när graferna var skapade. Det ska \textbf{INTE} stå ``Average time (\textbf{ms})'' utan det ska stå ``Average time (\textbf{us}) alltså mikrosekunder.
 
 \section{Analys/diskussion}
 
@@ -299,6 +301,17 @@ Den första frågan var inom förväntningar. Anledningen till detta är att all
 
 \subsubsection{Fråga 2}
 Den andra frågan var däremot ganska förvånande i och med att 52.5\% av som svarade skulle välja Linux över Windows om de hade chansen. Detta är ganska förbryllande eftersom att Linux är välkänt för att kräva mycket konfiguration och/eller datorintresse. Man kan tänka sig att många utvecklare skulle vara högt dator intresserade men det är inte sant (enligt min upplevelse i och kring forum). Många frontend utvecklare använder sig ofta av proprietära program som Adobe Experience Design (Adobe Xd). 
+
+
+\subsection{Benchmark}
+
+Enligt test resultaten (se sida:\pageref{tests}) så kan man se att Manjaro Linux har bättre prestanda en Windows 10 med ungefär 10 mikrosekunder. Medans detta kanske inte ser ut som speciellt mycket skillnad så är det mycket möjligt add dena mikro skillnad blir mycket större när man använder sig utav fler tunga programm/processer sammtidigt.
+
+Detta kan man se och förstå när man tittar på användningen av Linux i servers.
+
+\vspace{1cm}
+\includegraphics[width=.6\textwidth]{IDC.png}\cite{linux-market}
+
 
 \subsection{Problem med metodiken}
 
@@ -326,9 +339,12 @@ Eftersom att det finns el i systemet så kräver det att man kyler ner det på g
 
 \section{Slutsats}\label{slutsats}
 
+Analysen har gått mycket bra och analysen visar att Manjaro Linux har högre prestanda en vad Windows 10 har (se sida: \pageref{tests}). Jag anser dock att för att definitivt säga att Linux har högre prestnada en Windows så bör det testas på fler sett en vad jag har kunnat göra i denna analys. Några ideer gällande vad man bör testa vore: grafik relaterade processer som Blender\cite{blender} och/även standardiserade tester som t.ex Indigo Bench\cite{indigo}. Detta eftersom att det finns olika typer av prestanda att mäta. Bara för att nämna ett par: fps (frames per second), kompilerings tider, exekveringstider, mm.
 
 
-\printbibliography
+\printbibliography[type=online]
+
+\printbibliography[type=misc, title={Bilagor}]
 
 
 \end{document}

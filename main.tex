@@ -86,15 +86,13 @@
 
 \vspace{2cm}
 \begin{abstract}
-%% rewrite this
-For every day that goes our world becomes more and more digitalised, and thanks to that we have lots and lots of options and there's lots of companies and startups that make everything from smart vacuum cleaners to smartwatches and cars. However, with options comes choosing one or more of them. In this analasys we will take a deep dive and look into the performance of two diffirent operatingsystems. Namely: Manjaro Linux and Windows 10. Because of this it's highly intresting to figure out if there's relevant performance diffirences between the two operating systems and to do so, low level languages/system languages will be used to make a benchmark to figure out if there's a relevant diffirence between Manjaro Linux and Windows 10.
+In this analysis, Manjaro Linux and Windows 10 are to be tested with a benchmark written by the author. The result of the benchmark was that Manjaro Linux was indeed faster than Windows 10 by about \SI{10}{\us} (read more on page: \pageref{tests}). However, while these results show that Manjaro Linux is indeed faster, it is not definitive. I recommend further investigation into the subjects as there's more tests that can be done to test other parts of the computer like the graphics card.
 
 \end{abstract}
 
 \section{Sammanfattning}\label{sum}
 
-I den här analysen så kommer det att tas reda på om Manjaro Linux och Windows 10 har olika prestanda och varför. Efter att att testen som skrevs hade körts så sa datan att Manjaro Linux var snabbare en Windows 10 med ungefär 10 mikro sekunder. Medans detta kan ses som mycket lite så måste vi komma ihåg att uppgiften som datorn utförde var att köra fibonacci sekvensen vilket är relativt lätt. Förvisso så är det så att prestanda testet bed fibonacci sekvensen kommer nära gränserna av 64bit så är det fortfarande relativt lätt. Så om det finns skillnader här (vilket det gör) så betyder det att om man skalar upp testerna på ett mycket större set så bör det teoretiskt sett var en högre prestanda skillnad. 
-%% TODO: Finish this after you've finished the slutsats
+I denna analys kommer det att ta redas på om Manjaro Linux och Windows 10 har lika eller olika prestanda. Dessutom så kommer det spekuleras kring varför resultaten är som dom är. Anledningen till denna undersökning är att ta reda på varför Linux är mer använt i server världen en vad Windows är.\cite{linux-market}. Resultatet av prestanda testerna var att Manjaro Linux hade högre prestanda fast med liten marginal. Jag rekommenderar att det bör göras fler utförliga testerna i andra områden av mjukvara som t.ex Indigo\cite{indigo} som testar grafik rendering vilket tar mycket mer på grafikkortets kapacitet än de testerna som har gjorts i denna analys.
 
 
 \vspace{1cm}
@@ -333,7 +331,7 @@ Om jag skulle kunna gjort det, så skulle jag ha rensat min maskin helt och omin
 Alla datorer kräver elektricitet. Min CPU (Amd ryzen r7 1700 \SI{3.0}{\giga\hertz}) drar \SI{65}{\watt}(TDP)\cite{ryzen1700spec} men den kräver förmodligen mer en så eftersom att jag har överklockat min CPU till \SI{3.9}{\giga\hertz}.
 Dessutom så har jag en GTX 1070 Armored OC från MSI\cite{1070} och den drar \SI{150}{\watt}.
 
-Eftersom att det finns el i systemet så kräver det att man kyler ner det på grund av spillvärme\cite{wasteheat} som man måste bli av med för att kunna behålla prestandan. Kylningen är nästan aldrig konstant om man inte har en värme kontrollerat rum eller låda. Eftersom att jag inte har det så kan jag inte garantera mina resultat eftersom att jag gjorde dom på olika dagar och vid olika tidpunkter. Detta gör att rumstemperaturen kan vara annorlunda. En dator kan aldrig bli kallare än vad rummet är\cite{thermodynamics} om man inte använder sig av kemikalier som Ln2.
+Eftersom att det finns el i systemet så kräver det att man kyler ner det på grund av spillvärme\cite{wasteheat} som man måste bli av med för att kunna behålla prestandan. Kylningen är nästan aldrig konstant om man inte har en värme kontrollerat rum eller låda. Eftersom att jag inte har det så kan jag inte garantera mina resultat eftersom att jag gjorde dom på olika dagar och vid olika tidpunkter. Detta gör att rumstemperaturen kan vara annorlunda. En dators komponenter kan aldrig bli kallare än vad rummet är med luft kylning\cite{thermodynamics} om man inte använder sig av kemikalier som Ln2.
 
 
 
@@ -349,7 +347,3 @@ Analysen har gått mycket bra och analysen visar att Manjaro Linux har högre pr
 
 \end{document}
 
-
-%% Note to self:
-
-%% Write about how Linux stays ahead in security and performance by switching to newer versions of File systems and other systems/software.

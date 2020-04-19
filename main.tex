@@ -92,7 +92,7 @@ In this analysis, Manjaro Linux and Windows 10 are to be tested with a benchmark
 
 \section{Sammanfattning}\label{sum}
 
-I denna analys kommer det att ta redas på om Manjaro Linux och Windows 10 har lika eller olika prestanda. Dessutom så kommer det spekuleras kring varför resultaten är som dom är. Anledningen till denna undersökning är att ta reda på varför Linux är mer använt i server världen en vad Windows är.\cite{linux-market}. Resultatet av prestanda testerna var att Manjaro Linux hade högre prestanda fast med liten marginal. Jag rekommenderar att det bör göras fler utförliga testerna i andra områden av mjukvara som t.ex Indigo\cite{indigo} som testar grafik rendering vilket tar mycket mer på grafikkortets kapacitet än de testerna som har gjorts i denna analys.
+I denna analys kommer det att ta redas på om Manjaro Linux och Windows 10 har lika eller olika prestanda. Dessutom så kommer det spekuleras kring varför resultaten är som dom är. Anledningen till denna undersökning är att ta reda på varför Linux är mer använt i server världen än vad Windows är.\cite{linux-market}. Resultatet av prestanda testerna var att Manjaro Linux hade högre prestanda fast med liten marginal. Jag rekommenderar att det bör göras fler utförliga tester i andra områden av mjukvara som t.ex Indigo\cite{indigo} som testar grafik rendering vilket tar mycket mer på grafikkortets kapacitet än de tester som har gjorts i denna analys.
 
 
 \vspace{1cm}
@@ -101,12 +101,12 @@ I denna analys kommer det att ta redas på om Manjaro Linux och Windows 10 har l
 \section{Inledning}
  
  
-   I och med att världen blir mer och mer digitaliserad för varje dag som går, så är det inte konstigt att det finns en massiv marknad med olika alternativ för nästintill allting i den digitaliserade världen. Allt från telefoner till hemdatorer, robotdammsugare eller också en robotgräsklippare. Alla dessa digitaliserade mirakel har en sak gemensamt. Dem alla har ett operativsystem.
+   I och med att världen blir mer och mer digitaliserad för varje dag som går, så är det inte konstigt att det finns en massiv marknad med olika alternativ för nästintill allting i den digitaliserade världen. Allt från telefoner till hemdatorer, robotdammsugare eller också en robotgräsklippare. Alla dessa digitaliserade mirakel har en sak gemensamt. De alla har ett operativsystem.
  
    Världens mest kända operativsystem\cite{winstat} är Microsoft Windows. Microsoft har en lång rad med olika versioner av sitt operativsystem\cite{windows}: Windows XP, Windows Vista, Windows 7[\dots] och deras senaste (och förmodligen sista) operativsystem Windows 10.
     
    Apple har flera olika operativsystem I deras olika produkter. I deras datorer så har dom macOS, i deras telefoner har dom iOS och i deras nya iPads så har dom iPadOS.\cite{appleOS}
-    Det finns faktisk ett annat stort ``operativsystem''; Linux är en så kallad Kernel \cite{redhat} som är det man kan bygga ett operativsystem på. Linux har många olika operativsystem som är kallade för distributioner eller förkortat \textit{``distros''}. Linux är välkänt, speciellt inom utvecklar världen eftersom att det är mycket vänligt för utvecklingsmiljöer, dessutom så har Linux (oftast) en mycket god prestanda på maskiner med mindre processorkraft\cite{whatislinux}. På grund av detta så är bl.a: iPadOS, iOS, macOS, Android och nästintill allting annat som inte har så mycket processorkraft som t.ex en hiss någon form a Linux som operativsystem.
+    Det finns faktisk ett annat stort ``operativsystem''; Linux är en så kallad Kernel \cite{redhat} som är det man kan bygga ett operativsystem på. Linux har många olika operativsystem som är kallade för distributioner eller förkortat \textit{``distros''}. Linux är välkänt, speciellt inom utvecklar världen eftersom att det är mycket vänligt för utvecklingsmiljöer, dessutom så har Linux (oftast) en mycket god prestanda på maskiner med mindre processorkraft\cite{whatislinux}. På grund av detta så är bl.a: iPadOS, iOS, macOS, Android och nästintill allting annat som inte har så mycket processorkraft som t.ex en hiss någon form av Linux som operativsystem.
 
     Men vad är skillnaderna på dom här operativsystemen och är prestandan annorlunda mellan dom?
     
@@ -119,8 +119,8 @@ I denna analys kommer det att ta redas på om Manjaro Linux och Windows 10 har l
 
     \subsection{Hypotes}
 
-    Utifrån mina egen upplevelse så är Linux (när man väl har konfigurerat det ordentligt) en mycket mer stabil och snabbare upplevelse än Windows 10. I och med mina tidigare upplevelser så tror jag att Linux kommer att vinna. Linux kanske inte kommer att ha så mycket bättre resultat med stora marginaler men jag tror att Linux kommer att ha bättre prestanda.
-    Det finns en anledning till att Linux finns i majoriteten av operativsystem men också i majoriteten av servers som cloud servers och liknande.
+    Utifrån min egen upplevelse så är Linux (när man väl har konfigurerat det ordentligt) en mycket mer stabil och snabbare upplevelse än Windows 10. I och med mina tidigare upplevelser så tror jag att Linux kommer att vinna. Linux kanske inte kommer att ha så mycket bättre resultat med stora marginaler men jag tror att Linux kommer att ha bättre prestanda.
+    Det finns en anledning till att Linux finns i majoriteten av operativsystem men också i majoriteten av servers som cloud serverar och liknande.
  
 
     \subsection{Linux}
@@ -141,7 +141,7 @@ I denna analys kommer det att ta redas på om Manjaro Linux och Windows 10 har l
     Men inte på Linux. På Linux så använder man oftast sig av en terminal och ett kommando (detta varierar på distron).
     På Manjaro som är Arch baserad så använder man sig utav pacman\cite{pacman}. Pacman är en ``package manager''\cite{pkgmanager}. Den hanterar paket (mjukvara) som man vill ta bort, installera eller kanske uppdatera.
 
-    För att installera ett program på Manjaro så skulle man skriva: sudo pacman -S programnamn. Notera att det går att installera program på andra sätt
+    För att installera ett program på Manjaro så skulle man skriva: sudo pacman -S programnamn. Notera att det går att installera program på andra sätt.
 
 
     \subsubsection{Absolut kontroll}
@@ -158,9 +158,9 @@ I denna analys kommer det att ta redas på om Manjaro Linux och Windows 10 har l
    \subsection{Windows}
 
 
-    \subsubsection{Skrivet I flera språk}
+    \subsubsection{Skrivet i flera språk}
     
-    Windows 10 är skrivet i programeringsspråket C\# som är skapat av Microsoft\cite{c}. Microsoft skapade C\# för 20 år sedan (2000) när de ville skriva delar av Windows XP i Java men det fick dem inte eftersom att Oracle sa nej. Så de utvecklade vad Klaus och Angelika Langer sa i ett bloginlägg att ``Java and C\# are almost identical programing languages. Boring repetition that lacks innovation''.\cite{cquote}  
+    Windows 10 är till viss del skrivet i programeringsspråket C\# som är skapat av Microsoft\cite{c}. Microsoft skapade C\# för 20 år sedan (2000) när de ville skriva delar av Windows XP i Java, men det fick dem inte eftersom att Oracle sa nej. Så de utvecklade vad Klaus och Angelika Langer sa i ett bloginlägg att ``Java and C\# are almost identical programing languages. Boring repetition that lacks innovation''.\cite{cquote}  
     
 
     \subsubsection{Proprietärt}
@@ -191,12 +191,12 @@ För att ta reda på om det finns prestandaskillnader mellan Windows och Linux (
 
 \subsubsection{Val av programeringsspråk}
 
-När jag skulle ta reda på vilket programeringsspråk jag skulle använda för att skriva benchmarket, spenderade jag mycket tid till att läsa litteratur kring programeringsspråk. Detta var mycket svårt eftersom att det finns extremt många programeringsspråk. Bara för att nämna ett par: Java, Javascript, Python, C, C++, C\#, Ruby, Rust, mm. 
+När jag skulle ta reda på vilket programmeringsspråk jag skulle använda för att skriva benchmarket, spenderade jag mycket tid till att läsa litteratur kring programmeringsspråk. Detta var mycket svårt eftersom att det finns extremt många programmeringsspråk. Bara för att nämna ett par: Java, Javascript, Python, C, C++, C\#, Ruby, Rust, mm. 
 
 
-Efter att jag hade läst litteraturen relaterande till programeringsspråken så kom jag fram till att jag skulle skriva mitt program i språket Rust.\cite{rust} Anledningen till detta är att Rust är ett snabbt, stabilt och ett ``systemnivå språk''. Dessutom så har Rust lite så kallat \textit{``garbage collection''}\cite{garbage}, alltså att Rust bl.a gör sig av med oanvända variabler som tar platts i RAM-minnet. Dessutom så valde jag Rust över C och C++ eftersom att jag har använt mig av det tidigare.
+Efter att jag hade läst litteraturen relaterande till programmeringsspråken så kom jag fram till att jag skulle skriva mitt program i språket Rust.\cite{rust} Anledningen till detta är att Rust är ett snabbt, stabilt och ett ``systemnivå språk''. Dessutom så har Rust lite så kallat \textit{``garbage collection''}\cite{garbage}, alltså att Rust bl.a gör sig av med oanvända variabler som tar platts i RAM-minnet. Dessutom så valde jag Rust över C och C++ eftersom att jag har använt mig av det tidigare.
 
-Jag valde att ta bort programeringsspråken som var långsamma och de programeringsspråk som är \textit{``interpreted''}\cite{Interpreted-language}. Dessutom så tog jag bort språken som har kompabilitets lager. Dessa kritierer tog bort: Java, Javascript, Ruby, C\# och Python.
+Jag valde att ta bort programmeringsspråken som är långsamma och de programmeringsspråk som är \textit{``interpreted''}\cite{Interpreted-language}. Dessutom så tog jag bort språken som har kompabilitets lager. Dessa kritierer tog bort: Java, Javascript, Ruby, C\# och Python.
 
 \subsubsection{Vad ska programmet utför för uppgift, hur mäter jag prestandan och hur verifierar jag mina resultat?}
 
@@ -298,14 +298,14 @@ Det här svaret från en av applikanterna är lik och en del av min egen hypotes
 Den första frågan var inom förväntningar. Anledningen till detta är att alla utvecklare inte känner till Linux på en djupare nivå än att Ubuntu är en av dom vanligasta distributionerna\cite{commondistro}.
 
 \subsubsection{Fråga 2}
-Den andra frågan var däremot ganska förvånande i och med att 52.5\% av som svarade skulle välja Linux över Windows om de hade chansen. Detta är ganska förbryllande eftersom att Linux är välkänt för att kräva mycket konfiguration och/eller datorintresse. Man kan tänka sig att många utvecklare skulle vara högt dator intresserade men det är inte sant (enligt min upplevelse i och kring forum). Många frontend utvecklare använder sig ofta av proprietära program som Adobe Experience Design (Adobe Xd). 
+Den andra frågan var däremot ganska förvånande i och med att 52.5\% av dem som svarade skulle välja Linux över Windows om de hade chansen. Detta är ganska förbryllande eftersom att Linux är välkänt för att kräva mycket konfiguration och/eller datorintresse. Man kan tänka sig att många utvecklare skulle vara högt dator intresserade men det är inte sant (enligt min upplevelse i och kring forum). Många frontend utvecklare använder sig ofta av proprietära program som Adobe Experience Design (Adobe Xd), vilket är en vanlig anledning att använda andra operativsystem en Linux baserade sådana eftersom att Adobe's produkter inte finns på Linux distros. 
 
 
 \subsection{Benchmark}
 
-Enligt test resultaten (se sida:\pageref{tests}) så kan man se att Manjaro Linux har bättre prestanda en Windows 10 med ungefär 10 mikrosekunder. Medans detta kanske inte ser ut som speciellt mycket skillnad så är det mycket möjligt add dena mikro skillnad blir mycket större när man använder sig utav fler tunga programm/processer sammtidigt.
+Enligt test resultaten (se sida:\pageref{tests}) så kan man se att Manjaro Linux har bättre prestanda en Windows 10 med ungefär 10 mikrosekunder. Medans detta kanske inte ser ut som speciellt mycket skillnad så är det mycket möjligt add denna mikro skillnad blir mycket större när man använder sig utav fler tunga program/processer sammtidigt.
 
-Detta kan man se och förstå när man tittar på användningen av Linux i servers.
+Detta kan man se och förstå när man tittar på användningen av Linux i servrar.
 
 \vspace{1cm}
 \includegraphics[width=.6\textwidth]{IDC.png}\cite{linux-market}
@@ -320,7 +320,7 @@ Vinklad data kan och är förmodligen ett problem med enkäten som jag har skick
 \subsection{Okända variabler som skulle kunna ha effekt på resultatet}
 
 
-\subsubsection{Använd Mjukvara}
+\subsubsection{Använd mjukvara}
 
 Om man ska utföra ett så precist benchmark så möjligt när det kommer till mjukvara så bör man ha helt nya verisioner och inga andra program som inte är nödvändiga. Detta eftersom att annars kan det finns oidentiferade program eller bakrundsproccesser som tar upp prestanda. Detta kan leda till att det finns fler bakrundsproccesser igång vilket teoretiskt sett skulle kunna leda till försämrade resultalt.
 
@@ -337,7 +337,7 @@ Eftersom att det finns el i systemet så kräver det att man kyler ner det på g
 
 \section{Slutsats}\label{slutsats}
 
-Analysen har gått mycket bra och analysen visar att Manjaro Linux har högre prestanda en vad Windows 10 har (se sida: \pageref{tests}). Jag anser dock att för att definitivt säga att Linux har högre prestnada en Windows så bör det testas på fler sett en vad jag har kunnat göra i denna analys. Några ideer gällande vad man bör testa vore: grafik relaterade processer som Blender\cite{blender} och/även standardiserade tester som t.ex Indigo Bench\cite{indigo}. Detta eftersom att det finns olika typer av prestanda att mäta. Bara för att nämna ett par: fps (frames per second), kompilerings tider, exekveringstider, mm.
+Analysen har gått mycket bra och analysen visar att Manjaro Linux har högre prestanda än vad Windows 10 har (se sida: \pageref{tests}). Jag anser dock att för att definitivt säga att Linux har högre prestnada än Windows så bör det testas på fler sätt än vad jag har kunnat göra i denna analys. Några idéer gällande vad man bör testa vore: grafik relaterade processer som Blender\cite{blender} och/även standardiserade tester som t.ex Indigo Bench\cite{indigo}. Detta eftersom att det finns olika typer av prestanda att mäta. Bara för att nämna ett par: fps (frames per second), kompilerings tider, exekveringstider, mm.
 
 
 \printbibliography[type=online]
